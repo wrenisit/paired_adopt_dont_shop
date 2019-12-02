@@ -1,0 +1,28 @@
+
+<% @pets %>
+<h4>There are <%= @pets.count %> pets at this shelter </h4>
+<h1>Pets</h1>
+<% @pets.each do |pet| %>
+<h3>Name: &nbsp<%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>
+  <img src=<%= pet.image %>>
+  <ul>
+  <li><p1>Age:&nbsp </p1><p> <%= pet.approximate_age %></p></li>
+  <li><p1>Sex:&nbsp </p1><p> <%= pet.sex %></p></li>
+  <li><p1>Description:&nbsp </p1><p> <%= pet.description %></p></li>
+  <li><p1> Adoption Status: &nbsp </p1><p><% if pet.adoptable %>
+      Adoptable
+    <% else %>
+      Pending Adoption
+    <% end %></p></li>
+  <li><p1>Current shelter: &nbsp </p1><p><%= link_to "#{pet.shelter&.name}", "/shelters/#{pet.shelter_id}" %></p></li>
+</ul>
+  <%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %>
+  <%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %>
+  </br>
+  </br>
+  </br>
+<% end %>
+
+<% if @shelter %>
+  <h3><%= link_to 'Add New Adoptable Pet', "/shelters/#{@shelter.id}/pets/new" %></h3>
+<% end %>

@@ -22,3 +22,5 @@
     <h4><%= link_to "Delete Review", "/shelters/#{@shelter.id}/#{review.id}", method: :delete %></h4>
     </section>
   <% end %>
+
+<h4><%= link_to "Create new review", "/shelters/#{@shelter.id}/new_review" %></h4>

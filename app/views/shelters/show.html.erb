@@ -14,8 +14,11 @@
 
 <h2>Shelter<%= @shelter.name%> Reviews </h2>
   <% @reviews.each do |review| %>
+  <section id="shelter-<%= review.id %>">
     <h4>Title:<%= review.title %></h4>
     <h4>Rating:<%= review.rating %></h4>
     <h4><%= review.content %></h4>
     <h4><%= link_to "Delete Review", "/shelters/#{@shelter.id}" %></h4>
+    <img src><%= review.opt_picture %>
+    </section>
   <% end %>

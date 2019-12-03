@@ -297,6 +297,7 @@
         1,
         1,
         null,
+        1,
         null
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/helpers/application_helper.rb": [
@@ -315,8 +316,71 @@
         1,
         1,
         null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/review.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/shelters_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/reviews_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1575396842
+    "timestamp": 1575397685
   }
 }

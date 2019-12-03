@@ -53,4 +53,5 @@ shelter_review_1 = shelter_1.reviews.create(
 shelter_review_2 = shelter_1.reviews.create(
                     title: "Cleanest shelter I've been to!",
                     rating: 5,
-                    content: "I adopted my friendly pups from here! 10/10 would go back.")
+                    content: "I adopted my friendly pups from here!",
+                    opt_picture: "https://st2.depositphotos.com/4967775/11323/v/950/depositphotos_113235752-stock-illustration-avatar-girls-icon-vector-woman.jpg" )

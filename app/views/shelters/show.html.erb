@@ -10,3 +10,11 @@
 <h4><%= link_to "Edit #{@shelter.name}", "/shelters/#{@shelter.id}/edit" %></h4></br>
 <h4><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></h4></br>
 <h4><%= link_to "View #{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></h4></br>
+
+
+<h2>Shelter<%= @shelter.name%> Reviews </h2>
+  <% @reviews.each do |review| %>
+    <h4>Title:<%= review.title %></h4>
+    <h4>Rating:<%= review.rating %></h4>
+    <h4><%= review.content %></h4>
+  <% end %>

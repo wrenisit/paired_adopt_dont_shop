@@ -38,9 +38,19 @@ dog_3 = shelter_2.pets.create( image: "https://upload.wikimedia.org/wikipedia/co
                     sex: "male",
                     adoptable: true)
 
-dog_3 = shelter_2.pets.create( image: "https://petlandbradenton.com/wp-content/uploads/2018/02/1045420_800.jpg",
+dog_4 = shelter_2.pets.create( image: "https://petlandbradenton.com/wp-content/uploads/2018/02/1045420_800.jpg",
                     name: "Frank",
                     approximate_age: 1,
                     description: "Frank the tank - this chonk will be over 200 lbs when he is full grown.",
                     sex: "male",
                     adoptable: false)
+
+shelter_review_1 = shelter_1.reviews.create(
+                    title: "WOW! AWESOME SHELTER!",
+                    rating: 5,
+                    content: "I adopted my friendly pup from here! 10/10 would go back.")
+
+shelter_review_2 = shelter_1.reviews.create(
+                    title: "Cleanest shelter I've been to!",
+                    rating: 5,
+                    content: "I adopted my friendly pups from here! 10/10 would go back.")

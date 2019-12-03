@@ -7,10 +7,18 @@ RSpec.describe "pet index page", type: :feature do
                                 city:    "Denver",
                                 state:   "CO",
                                 zip:     "80206")
-    @pet = Pet.create(name: "Sparky",
+    @pet = Pet.create(
+      image: "https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg",
+      name: "Sparky",
       approximate_age: 7,
       sex: "male",
-      shelter: @shelter_1)
+      shelter: @shelter_1,
+      description: "woof!")
+
+    shelter_review_1 = @shelter_1.reviews.create(
+            title: "WOW! AWESOME SHELTER!",
+            rating: 5,
+            content: "I adopted my friendly pup from here! 10/10 would go back.")
     visit "/pets"
   end
 
@@ -29,7 +37,6 @@ RSpec.describe "pet index page", type: :feature do
   end
 
   it "can click on current shelter link" do
-    click_on("#{@shelter_1.name}")
-    expect(page).to have_current_path("/shelters/#{@shelter_1.id}")
+    expect(page).to have_link("#{@shelter_1.name}")
   end
 end

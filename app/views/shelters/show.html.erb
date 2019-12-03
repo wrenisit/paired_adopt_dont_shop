@@ -10,3 +10,15 @@
 <h4><%= link_to "Edit #{@shelter.name}", "/shelters/#{@shelter.id}/edit" %></h4></br>
 <h4><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></h4></br>
 <h4><%= link_to "View #{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></h4></br>
+
+
+<h2>Shelter<%= @shelter.name%> Reviews </h2>
+  <% @reviews.each do |review| %>
+  <section id="shelter-<%= review.id %>">
+    <img src><%= review.opt_picture %>
+    <h4>Title:<%= review.title %></h4>
+    <h4>Rating:<%= review.rating %></h4>
+    <h4><%= review.content %></h4>
+    <h4><%= link_to "Delete Review", "/shelters/#{@shelter.id}/#{review.id}", method: :delete %></h4>
+    </section>
+  <% end %>

@@ -48,7 +48,8 @@ dog_4 = shelter_2.pets.create( image: "https://petlandbradenton.com/wp-content/u
 shelter_review_1 = shelter_1.reviews.create(
                     title: "WOW! AWESOME SHELTER!",
                     rating: 5,
-                    content: "I adopted my friendly pup from here! 10/10 would go back.")
+                    content: "I adopted my friendly pup from here! 10/10 would go back.",
+                    opt_picture: "https://coxrare.files.wordpress.com/2018/07/human-empathy-dogs.png?w=1200&h=627&crop=1")
 
 shelter_review_2 = shelter_1.reviews.create(
                     title: "Cleanest shelter I've been to!",

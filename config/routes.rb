@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   patch '/shelters/:shelter_id/:review_id/edit', to: 'reviews#update'
 
   post '/pets/:pet_id/favorite', to: 'favorites#create'
+  get '/favorites', to: 'favorites#index'
 end

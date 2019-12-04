@@ -8,11 +8,18 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @favorites = Favorite.all
+    if Favorite.count > 0
+      @favorites = Favorite.all
+    end
   end
 
   def destroy
-    Favorite.destroy(params[:id])
-    redirect_to '/favorites'
+    if params[:id]
+      Favorite.destroy(params[:id])
+      redirect_to '/favorites'
+    else
+      Favorite.destroy_all
+      redirect_to '/favorites'
+    end
   end
 end

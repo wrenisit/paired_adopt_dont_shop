@@ -10,4 +10,9 @@ class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
   end
+
+  def destroy
+    Favorite.destroy(params[:id])
+    redirect_to '/favorites'
+  end
 end

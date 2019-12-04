@@ -10,7 +10,9 @@ RSpec.describe "User can see shelter reviews", type: :feature do
     @shelter_review_1 = @shelter_1.reviews.create(
                         title:  "WOW! AWESOME SHELTER!",
                         rating:  5,
-                        content: "I adopted my friendly pup from here! 10/10 would go back.")
+                        content: "I adopted my friendly pup from here! 10/10 would go back.",
+                        opt_picture: "https://coxrare.files.wordpress.com/2018/07/human-empathy-dogs.png?w=1200&h=627&crop=1")
+
     @shelter_review_2 = @shelter_1.reviews.create(
                         title:  "Cleanest shelter I've been to!",
                         rating:  5,
@@ -24,12 +26,14 @@ RSpec.describe "User can see shelter reviews", type: :feature do
     expect(page).to have_content("WOW! AWESOME SHELTER!")
     expect(page).to have_content(5)
     expect(page).to have_content("I adopted my friendly pup from here! 10/10 would go back")
+    expect(page).to have_css("img[src*='files.wordpress']")
   end
 
     within "#shelter-#{@shelter_review_2.id}" do
       expect(page).to have_content("Cleanest shelter I've been to!")
       expect(page).to have_content(5)
       expect(page).to have_content("I adopted my friendly pups from here!")
+      expect(page).to have_no_css("img[src*='']")
     end
   end
 

@@ -25,19 +25,19 @@ RSpec.describe "User can see all favorited pets" do
 
   visit "/pets/#{pet_1.id}"
   click_button "Favorite this pet"
-  # visit "/pets/#{pet_2.id}"
-  # click_button "Favorite this pet"
+  visit "/pets/#{pet_2.id}"
+  click_button "Favorite this pet"
 
   visit "/favorites"
 
-    # within "#favorites-#{pet_1.id}" do
+    within "#favorite-#{pet_1.id}" do
       expect(page).to have_content("Sparky")
       expect(page).to have_css("img[src*='dogtime.com/assets/uploads']")
-    # end
+    end
 
-    # within "#favorites-#{pet_2.id}" do
-    #   expect(page).to have_content("Spot")
-    #   expect(page).to have_css("img[src*='encrypted-tbn0.gstatic.com']")
-    # end
+    within "#favorite-#{pet_2.id}" do
+      expect(page).to have_content("Spot")
+      expect(page).to have_css("img[src*='encrypted-tbn0.gstatic.com']")
+    end
   end
 end

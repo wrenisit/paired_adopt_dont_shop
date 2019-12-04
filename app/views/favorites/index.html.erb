@@ -7,3 +7,4 @@
   <h4><%= button_to "Remove #{favorite.pet.name}", "/favorites/#{favorite.id}", method: :delete %></h4></br>
 </section>
 <% end %>
+<h3><%= button_to "Remove All Favorited Pets", "/favorites", method: :delete %></h3>

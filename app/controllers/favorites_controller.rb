@@ -12,7 +12,12 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    Favorite.destroy(params[:id])
-    redirect_to '/favorites'
+    if params[:id]
+      Favorite.destroy(params[:id])
+      redirect_to '/favorites'
+    else
+      Favorite.destroy_all
+      redirect_to '/favorites'
+    end
   end
 end

@@ -10,8 +10,6 @@ class FavoritesController < ApplicationController
   def index
     if Favorite.count > 0
       @favorites = Favorite.all
-    #else
-      #flash[:notice] = "Go Look For Your Fur-ever Friends On Our Site"
     end
   end
 

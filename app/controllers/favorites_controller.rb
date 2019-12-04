@@ -8,7 +8,11 @@ class FavoritesController < ApplicationController
   end
 
   def index
-    @favorites = Favorite.all
+    if Favorite.count > 0
+      @favorites = Favorite.all
+    #else
+      #flash[:notice] = "Go Look For Your Fur-ever Friends On Our Site"
+    end
   end
 
   def destroy

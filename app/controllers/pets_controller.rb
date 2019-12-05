@@ -11,6 +11,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @favorite = Favorite.find_by(pet_id: params[:id])
   end
 
   def new

@@ -1,6 +1,6 @@
 <h2> <%= @pet.name %></h2>
 
-<img src= <%= @pet.image %>></br>
+<img src= <%= @pet.image %>><br>
 <ul>
 <li><p1>Description: &nbsp </p1><p> <%= @pet.description %></p></li>
 <li><p1>Age:&nbsp</p1><p> <%= @pet.approximate_age %></p></li>
@@ -14,4 +14,8 @@
 </ul>
 <%= link_to "Edit #{@pet.name}", "/pets/#{@pet.id}/edit" %></br>
 <%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
-<%= button_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
+<% if @favorite.nil? %>
+  <%= button_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
+<% else %>
+  <%= button_to "Remove From Favorites", "/favorites/#{@favorite.id}", method: :delete %>
+<% end %>

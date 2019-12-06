@@ -3,9 +3,9 @@
 <% if favorite_pets %>
   <% favorite_pets.pets.each do |id, info_hash| %>
   <section id="favorite-<%= id %>">
-    <img src=<%= info_hash[:image] %>>
-    <h4><%= link_to "#{info_hash}", "/pets/#{id}" %></h4><br>
-    <h4><%= button_to "Remove #{info_hash[:name]}", "/favorites/#{id}", method: :delete %></h4><br>
+    <img src=<%= info_hash["image"] %>>
+    <h4><%= link_to "#{info_hash["name"]}", "/pets/#{id}" %></h4><br>
+    <h4><%= button_to "Remove #{info_hash["name"]}", "/favorites/#{id}", method: :delete %></h4><br>
   </section>
   <% end %>
   <% else %>

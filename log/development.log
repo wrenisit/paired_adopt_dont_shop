@@ -1108,3 +1108,108 @@ ActionView::Template::Error (undefined method `count_of_pets' for #<ActiveRecord
     21:      <% flash.each do |type, message| %>
   
 app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__394683151668151159_70217971007700'
+Started GET "/pets" for ::1 at 2019-12-05 21:00:19 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  Rendered pets/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `pets' for #<ActiveRecord::Relation []>):
+    15:      <nav>
+    16:        <nav_items><li><%= link_to "View all pets", "/pets" %></li></nav_items>
+    17:        <nav_items><li><%= link_to "View all shelters", "/shelters" %></li></nav_items>
+    18:        <nav_items><li>Favorite Pets: <%= link_to "#{favorite_pets.pets.keys.count.to_i}", "/favorites" %></li></nav_items>
+    19:      </nav>
+    20: 
+    21:      <% flash.each do |type, message| %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__4537709994265813125_70195319015860'
+Started GET "/pets" for ::1 at 2019-12-05 21:00:29 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  Rendered pets/index.html.erb within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `pets' for #<ActiveRecord::Relation []>):
+    15:      <nav>
+    16:        <nav_items><li><%= link_to "View all pets", "/pets" %></li></nav_items>
+    17:        <nav_items><li><%= link_to "View all shelters", "/shelters" %></li></nav_items>
+    18:        <nav_items><li>Favorite Pets: <%= link_to "#{favorite_pets.pets.keys.count.to_i}", "/favorites" %></li></nav_items>
+    19:      </nav>
+    20: 
+    21:      <% flash.each do |type, message| %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__4537709994265813125_70195328689180'
+Started GET "/shelters" for ::1 at 2019-12-05 21:00:44 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (1.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 28ms (Views: 16.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 21:00:48 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  Rendered pets/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `pets' for #<ActiveRecord::Relation []>):
+    15:      <nav>
+    16:        <nav_items><li><%= link_to "View all pets", "/pets" %></li></nav_items>
+    17:        <nav_items><li><%= link_to "View all shelters", "/shelters" %></li></nav_items>
+    18:        <nav_items><li>Favorite Pets: <%= link_to "#{favorite_pets.pets.keys.count.to_i}", "/favorites" %></li></nav_items>
+    19:      </nav>
+    20: 
+    21:      <% flash.each do |type, message| %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__4537709994265813125_70195299539240'
+Started GET "/shelters" for ::1 at 2019-12-05 21:12:21 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 131ms (Views: 117.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 21:12:27 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  Rendered pets/index.html.erb within layouts/application (19.2ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 10.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `pets' for #<ActiveRecord::Relation []>):
+    15:      <nav>
+    16:        <nav_items><li><%= link_to "View all pets", "/pets" %></li></nav_items>
+    17:        <nav_items><li><%= link_to "View all shelters", "/shelters" %></li></nav_items>
+    18:        <nav_items><li> <%= link_to "Favorite Pets: #{favorite_pets.pets.keys.count.to_i}", "/favorites" %></li></nav_items>
+    19:      </nav>
+    20: 
+    21:      <% flash.each do |type, message| %>
+  
+app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb___3429726036780661857_70328782679220'
+Started GET "/favorites" for ::1 at 2019-12-05 21:12:33 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.0ms)
+
+

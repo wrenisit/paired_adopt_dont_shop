@@ -7,13 +7,14 @@ class FavoritesController < ApplicationController
       name: pet.name,
       image: pet.image
     }
+    Favorite.new(session[:favorites])
     redirect_to "/pets/#{params[:pet_id]}"
     flash[:notice] = "Favorite added!"
   end
 
   def index
-    if Favorite.count > 0
-      @favorites = Favorite.all
+    if @pets
+      @favorites = @pets
     end
   end
 

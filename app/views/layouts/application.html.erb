@@ -15,7 +15,7 @@
      <nav>
        <nav_items><li><%= link_to "View all pets", "/pets" %></li></nav_items>
        <nav_items><li><%= link_to "View all shelters", "/shelters" %></li></nav_items>
-       <nav_items><li>Favorite Pets: <%= link_to "#{favorite_pets.count_of_pets}", "/favorites" %></li></nav_items>
+       <nav_items><li> <%= link_to "Favorite Pets: #{favorite_pets.pets.keys.count.to_i}", "/favorites" %></li></nav_items>
      </nav>
 
      <% flash.each do |type, message| %>

@@ -1,7 +1,12 @@
 class FavoritesController < ApplicationController
 
   def create
-    favorite = Favorite.create(pet_id: params[:pet_id])
+    pet = Pet.find(params[:pet_id])
+    session[:favorites] ||= Hash.new
+    session[:favorites][pet.id] = {
+      name: pet.name,
+      image: pet.image
+    }
     redirect_to "/pets/#{params[:pet_id]}"
     flash[:notice] = "Favorite added!"
   end

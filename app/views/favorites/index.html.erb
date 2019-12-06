@@ -1,11 +1,11 @@
 
 <h1>Your Favorite Pets</h1>
-<% if @favorites %>
-  <% @favorites.each do |favorite| %>
-  <section id="favorite-<%= favorite[:pet_id] %>">
-    <img src=<%= favorite.pet.image %>>
-    <h4><%= link_to "#{favorite.pet.name}", "/pets/#{favorite.pet.id}" %></h4></br>
-    <h4><%= button_to "Remove #{favorite.pet.name}", "/favorites/#{favorite.id}", method: :delete %></h4></br>
+<% if favorite_pets %>
+  <% favorite_pets.pets.each do |id, info_hash| %>
+  <section id="favorite-<%= id %>">
+    <img src=<%= info_hash[:image] %>>
+    <h4><%= link_to info_hash[:name], "/pets/#{id}" %></h4><br>
+    <h4><%= button_to "Remove #{info_hash[:name]}", "/favorites/#{id}", method: :delete %></h4><br>
   </section>
   <% end %>
   <% else %>

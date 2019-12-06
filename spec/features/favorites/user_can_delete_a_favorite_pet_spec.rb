@@ -32,7 +32,7 @@ RSpec.describe "User can delete favorited pets" do
 
     within "#favorite-#{pet_1.id}" do
       expect(page).to have_content("Sparky")
-      expect(page).to have_css("#{pet_1.image}")
+      expect(page).to have_css("img[src*='www.dogtime.com/assets/uploads']")
       click_button "Remove #{pet_1.name}"
     end
 

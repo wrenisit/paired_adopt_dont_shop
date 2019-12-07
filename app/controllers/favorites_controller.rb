@@ -7,23 +7,21 @@ class FavoritesController < ApplicationController
       name: pet.name,
       image: pet.image
     }
-    Favorite.new(session[:favorites])
+    @current = Favorite.new(session[:favorites])
     redirect_to "/pets/#{params[:pet_id]}"
     flash[:notice] = "Favorite added!"
   end
 
   def index
-    if @pets
-      @favorites = @pets
-    end
+
   end
 
   def destroy
     if params[:id]
-      Favorite.destroy(params[:id])
+      @favs.pets.delete(params[:id])
       redirect_to '/favorites'
     else
-      Favorite.destroy_all
+      session.delete(:favorites)
       redirect_to '/favorites'
     end
   end

@@ -14,8 +14,8 @@
 </ul>
 <%= link_to "Edit #{@pet.name}", "/pets/#{@pet.id}/edit" %></br>
 <%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
-<% if @favorite.nil? %>
-  <%= button_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
+<% if @favs.pets.keys.include?("#{@pet.id}") %>
+  <%= button_to "Remove From Favorites", "/favorites/#{@pet.id}", method: :delete %>
 <% else %>
-  <%= button_to "Remove From Favorites", "/favorites/#{@favorite.id}", method: :delete %>
+  <%= button_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
 <% end %>

@@ -10,7 +10,7 @@ RSpec.describe "User can delete an existing pet", type: :feature do
                                 zip:     "80206")
 
     dog_1 = shelter_1.pets.create!( image: "https://www.washingtonpost.com/resizer/kPkFQsQjvSIjfXG-mFXDEpxq6-4=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg",
-                      name: "Sparky",
+                      name: "Sporky",
                       approximate_age: 7,
                       description: "Sparky loves to play! His favorite game is No Take, Only Throw.",
                       sex: "male",

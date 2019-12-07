@@ -19,7 +19,7 @@ class FavoritesController < ApplicationController
   def destroy
     if params[:id]
       @favs.pets.delete(params[:id])
-      redirect_to '/favorites'
+      redirect_to "/pets/#{params[:id]}"
     else
       session.delete(:favorites)
       redirect_to '/favorites'

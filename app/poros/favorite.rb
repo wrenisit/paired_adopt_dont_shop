@@ -1,5 +1,5 @@
 class Favorite
-  attr_reader :pets
+  attr_accessor :pets
   def initialize(hash)
     @pets = hash ||= Hash.new
   end

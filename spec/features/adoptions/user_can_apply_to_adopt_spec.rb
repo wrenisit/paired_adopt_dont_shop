@@ -29,9 +29,9 @@ RSpec.describe "apply to adopt" do
   click_button "Favorite this pet"
 
   visit "/favorites"
-  click_button "Apply To Adopt"
+  click_button "Apply to Adopt"
 
-  expect(current_path).to eq('/adoptions/new')
+  expect(current_path).to eq("/adopts/new")
 
 
   fill_in :name, with: "P. Sherman"

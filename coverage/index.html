@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-09T15:14:13-07:00">2019-12-09T15:14:13-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-09T15:46:32-07:00">2019-12-09T15:46:32-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.89
+         1.88
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>50</b> files in total.
-    <b>559</b> relevant lines. 
-    <span class="green"><b>559</b> lines covered</span> and
+    <b>53</b> files in total.
+    <b>583</b> relevant lines. 
+    <span class="green"><b>583</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,9 +53,9 @@
       <tr>
         <td class="strong"><a href="#34a1813e30174c020e4cfd581b3b982ef177051f" class="src_link" title="app/controllers/adopts_controller.rb">app/controllers/adopts_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>8</td>
-        <td>8</td>
+        <td>19</td>
+        <td>9</td>
+        <td>9</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -67,7 +67,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>22.4</td>
+        <td>22.6</td>
       </tr>
       
       <tr>
@@ -123,9 +123,9 @@
       <tr>
         <td class="strong"><a href="#2f80dcc448363eecac5f279d20f76213da1abe9f" class="src_link" title="app/models/adopt.rb">app/models/adopt.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>6</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -143,7 +143,17 @@
       <tr>
         <td class="strong"><a href="#682a562dc1930b5b78e062cb1d49e432c1b33494" class="src_link" title="app/models/pet.rb">app/models/pet.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>7</td>
         <td>5</td>
+        <td>5</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#f58c1454ec6cb71593b3bada732fd9d4f446d310" class="src_link" title="app/models/pet_adopt.rb">app/models/pet_adopt.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>4</td>
         <td>3</td>
         <td>3</td>
         <td>0</td>
@@ -177,7 +187,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>31.8</td>
+        <td>32.2</td>
       </tr>
       
       <tr>
@@ -511,11 +521,31 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#54a5fac089736f7081b5a11de52d471ab323e79d" class="src_link" title="spec/models/adopts/adopts_spec.rb">spec/models/adopts/adopts_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>17</td>
+        <td>13</td>
+        <td>13</td>
+        <td>0</td>
+        <td>1.7</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#595966cf211a4ea03f5e6a888dbad11a996c951a" class="src_link" title="spec/models/pet_adopts/pet_adopts_spec.rb">spec/models/pet_adopts/pet_adopts_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#970430f4bc0fa76422e3d6e23b245762eba9de7c" class="src_link" title="spec/models/pets/pets_spec.rb">spec/models/pets/pets_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>16</td>
         <td>12</td>
-        <td>9</td>
-        <td>9</td>
+        <td>12</td>
         <td>0</td>
         <td>1.7</td>
       </tr>
@@ -571,8 +601,8 @@
     <h3>app/controllers/adopts_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>9</b> relevant lines. 
+      <span class="green"><b>9</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -634,16 +664,16 @@
           <code class="ruby">    @favorites = session[:favorites]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    redirect_to &#39;/favorites&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -652,37 +682,43 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">    def adopt_params</code>
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
+          <code class="ruby">    def adopt_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
           <code class="ruby">      params.permit(:name, :address, :city, :state, :phone, :description)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -743,8 +779,8 @@
           <code class="ruby">  def favorite_pets</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="7">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="109" data-linenumber="7">
+          <span class="hits">109</span>
           
           <code class="ruby">    @favs ||= Favorite.new(session[:favorites])</code>
         </li>
@@ -1814,8 +1850,8 @@
     <h3>app/models/adopt.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1829,13 +1865,31 @@
           <code class="ruby">class Adopt &lt; ApplicationRecord</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="2">
           
-          <code class="ruby">  belongs_to :pet</code>
+          
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :pet_adopts</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :pets, through: :pet_adopts</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_presence_of :name, :address, :city, :state, :zip, :phone, :description</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">end</code>
@@ -1888,8 +1942,8 @@
     <h3>app/models/pet.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1918,10 +1972,65 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
+          <code class="ruby">  has_many :pet_adopts</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :adopts, through: :pet_adopts</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
           <code class="ruby">  validates_presence_of :image, :name, :approximate_age, :sex, :shelter, :description</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f58c1454ec6cb71593b3bada732fd9d4f446d310">
+  <div class="header">
+    <h3>app/models/pet_adopt.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>3</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class PetAdopt &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :pet</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :adopt</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby">end</code>
@@ -2068,8 +2177,8 @@
           <code class="ruby">  def initialize(hash)</code>
         </li>
       
-        <li class="covered" data-hits="108" data-linenumber="4">
-          <span class="hits">108</span>
+        <li class="covered" data-hits="109" data-linenumber="4">
+          <span class="hits">109</span>
           
           <code class="ruby">    @pets = hash ||= Hash.new</code>
         </li>
@@ -2092,8 +2201,8 @@
           <code class="ruby">  def count_of_pets</code>
         </li>
       
-        <li class="covered" data-hits="79" data-linenumber="8">
-          <span class="hits">79</span>
+        <li class="covered" data-hits="80" data-linenumber="8">
+          <span class="hits">80</span>
           
           <code class="ruby">    @pets.length</code>
         </li>
@@ -8316,13 +8425,153 @@
 </div>
 
       
+        <div class="source_table" id="54a5fac089736f7081b5a11de52d471ab323e79d">
+  <div class="header">
+    <h3>spec/models/adopts/adopts_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe Adopt, type: :model do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;adopts validations&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :name}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :address}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :city}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :state}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :zip}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :phone}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it { should validate_presence_of :description}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;relationships&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it {should have_many :pet_adopts}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it {should have_many(:pets).through(:pet_adopts)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="595966cf211a4ea03f5e6a888dbad11a996c951a">
+  <div class="header">
+    <h3>spec/models/pet_adopts/pet_adopts_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>0</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+    </ol>
+  </pre>
+</div>
+
+      
         <div class="source_table" id="970430f4bc0fa76422e3d6e23b245762eba9de7c">
   <div class="header">
     <h3>spec/models/pets/pets_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>9</b> relevant lines. 
-      <span class="green"><b>9</b> lines covered</span> and
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8396,7 +8645,31 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &quot;relationships&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="13">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it {should have_many :pet_adopts}</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="14">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    it {should have_many(:adopts).through(:pet_adopts)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>

@@ -1098,6 +1098,41 @@
         null,
         null
       ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/spec/models/adopts/adopts_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/adopt.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/spec/models/pet_adopts/pet_adopts_spec.rb": [
+
+      ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/spec/models/pets/pets_spec.rb": [
         1,
         null,
@@ -1110,6 +1145,10 @@
         2,
         2,
         null,
+        1,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/pet.rb": [
@@ -1117,9 +1156,6 @@
         null,
         1,
         1,
-        null
-      ],
-      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/application_record.rb": [
         1,
         1,
         null
@@ -1231,7 +1267,7 @@
         1,
         null,
         1,
-        108,
+        109,
         null,
         null
       ],
@@ -1239,11 +1275,11 @@
         1,
         1,
         1,
-        108,
+        109,
         null,
         null,
         1,
-        79,
+        80,
         null,
         null
       ],
@@ -1285,6 +1321,7 @@
         1,
         1,
         1,
+        1,
         null,
         null,
         null,
@@ -1293,11 +1330,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/adopt.rb": [
-        1,
-        1,
         null
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/shelters_controller.rb": [
@@ -1384,8 +1416,14 @@
         null,
         null,
         null
+      ],
+      "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/pet_adopt.rb": [
+        1,
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1575929653
+    "timestamp": 1575931592
   }
 }

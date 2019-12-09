@@ -7,6 +7,7 @@ class AdoptsController < ApplicationController
   def create
     application = Adopt.new(adopt_params)
     @favorites = session[:favorites]
+    redirect_to '/favorites'
   end
 
 

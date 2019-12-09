@@ -1,6 +1,6 @@
-<h1> Adopt a new pet </h1>
+<h1> Adopt a New Pet </h1>
 
-<% form_tag '/adopts' do %>
+<%= form_tag '/adopts' do %>
   <%= label_tag :name %>
   <%= text_field_tag :name %><br>
 
@@ -19,5 +19,5 @@
   <%= label_tag :description %>
   <%= text_field_tag :description %><br>
 
-  <%= submit_tag "Apply to adopt pet" %>
+  <%= submit_tag "Submit" %>
 <% end %>

@@ -30,10 +30,10 @@ RSpec.describe "apply to adopt" do
 
   visit "/favorites"
   click_button "Apply to Adopt"
-
   expect(current_path).to eq("/adopts/new")
-
-
+  expect(page).to have_link("Sparky")
+  page.check "#{pet_1.id}"
+  page.check "#{pet_2.id}"
   fill_in :name, with: "P. Sherman"
   fill_in :address, with: "42 Wallaby Way"
   fill_in :city, with: "Sydney"

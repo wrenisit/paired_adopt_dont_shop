@@ -1278,7 +1278,7 @@
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/adopts_controller.rb": [
         1,
         null,
-        null,
+        1,
         null,
         null,
         null,
@@ -1386,6 +1386,6 @@
         null
       ]
     },
-    "timestamp": 1575925574
+    "timestamp": 1575929653
   }
 }

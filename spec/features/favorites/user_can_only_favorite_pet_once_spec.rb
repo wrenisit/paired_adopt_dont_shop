@@ -17,10 +17,7 @@ RSpec.describe "User can see all favorited pets" do
 
     visit "/pets/#{pet_1.id}"
 
-<<<<<<< HEAD
-=======
     expect(page).to have_content("Favorite Pets: 0")
->>>>>>> 125a3a71487f8c75bb30f97314224142586317e5
     click_on("Favorite this pet")
     expect(page).to have_content("Favorite Pets: 1")
     expect(page).to have_content("Favorite added!")

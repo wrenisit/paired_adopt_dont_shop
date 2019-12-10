@@ -22,7 +22,8 @@ class AdoptsController < ApplicationController
   end
 
   def index
-    @adopts = Adopt.all
+    pet = Pet.find_by(id: params[:id])
+    @adopts = pet.adopts
   end
 
   private

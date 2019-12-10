@@ -41,7 +41,8 @@ RSpec.describe "incomplete apply to adopt" do
   fill_in :phone, with: "555-867-5309"
   click_button "Submit"
 
-  expect(page).to have_content("Incomplete Application. Please fill in Description.")
+  expect(current_path).to eq("/adopts/new")
+  expect(page).to have_content("Incomplete Application")
 
   fill_in :description, with: "I have a dog ranch, and I'd love to adopt!"
   click_button "Submit"

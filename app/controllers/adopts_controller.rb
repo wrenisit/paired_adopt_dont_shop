@@ -21,6 +21,10 @@ class AdoptsController < ApplicationController
     end
   end
 
+  def index
+    @adopts = Adopt.all
+  end
+
   private
 
     def adopt_params

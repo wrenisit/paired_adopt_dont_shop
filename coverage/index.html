@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-09T21:32:01-07:00">2019-12-09T21:32:01-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-10T15:21:13-07:00">2019-12-10T15:21:13-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.89
+         2.08
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>53</b> files in total.
-    <b>593</b> relevant lines. 
-    <span class="green"><b>593</b> lines covered</span> and
+    <b>55</b> files in total.
+    <b>664</b> relevant lines. 
+    <span class="green"><b>664</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#34a1813e30174c020e4cfd581b3b982ef177051f" class="src_link" title="app/controllers/adopts_controller.rb">app/controllers/adopts_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>18</td>
-        <td>18</td>
+        <td>39</td>
+        <td>23</td>
+        <td>23</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>5.0</td>
       </tr>
       
       <tr>
@@ -67,17 +67,17 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>22.6</td>
+        <td>27.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#1d92c6802963894b1260fd8ce0aebaa273cf3594" class="src_link" title="app/controllers/favorites_controller.rb">app/controllers/favorites_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
-        <td>14</td>
-        <td>14</td>
+        <td>27</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
-        <td>5.2</td>
+        <td>7.1</td>
       </tr>
       
       <tr>
@@ -87,7 +87,7 @@
         <td>26</td>
         <td>26</td>
         <td>0</td>
-        <td>3.0</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -183,11 +183,11 @@
       <tr>
         <td class="strong"><a href="#797515e8baee50ea896a2ece5429b557948afd3c" class="src_link" title="app/poros/favorite.rb">app/poros/favorite.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>10</td>
-        <td>6</td>
-        <td>6</td>
+        <td>14</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
-        <td>32.2</td>
+        <td>30.6</td>
       </tr>
       
       <tr>
@@ -314,6 +314,26 @@
         <td class="strong"><a href="#e04843254f85282d294631d331558bce9f9a5c6a" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>36</td>
+        <td>28</td>
+        <td>28</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#2b445f1688cde88fe2ec524e9a26fab5d696ff6a" class="src_link" title="spec/features/adopts/user_gets_message_when_incomplete_adopt_spec.rb">spec/features/adopts/user_gets_message_when_incomplete_adopt_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>60</td>
+        <td>35</td>
+        <td>35</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#cb507beb863052a9e34a6515f9f5615449916202" class="src_link" title="spec/features/adopts/user_sees_pets_with_applications_list_spec.rb">spec/features/adopts/user_sees_pets_with_applications_list_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>52</td>
         <td>28</td>
         <td>28</td>
         <td>0</td>
@@ -601,8 +621,8 @@
     <h3>app/controllers/adopts_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>23</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -652,163 +672,193 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="8">
+          <span class="hits">4</span>
           
           <code class="ruby">    @application_params = adopt_params</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="9">
+          <span class="hits">4</span>
           
           <code class="ruby">    @adopt_pets = pets_params</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="10">
+          <span class="hits">4</span>
           
-          <code class="ruby">    @adopt_pets.each do |id|</code>
+          <code class="ruby">    adopt = Adopt.new(@application_params)</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="11">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="4" data-linenumber="11">
+          <span class="hits">4</span>
           
-          <code class="ruby">      @favs.pets.delete_if{|key, value| key == id }</code>
+          <code class="ruby">    if adopt.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      @adopt_pets.each do |id|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
           
-          <code class="ruby">    redirect_to &#39;/favorites&#39;</code>
+          <code class="ruby">        PetAdopt.create(pet_id: id, adopt_id: adopt.id)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="8" data-linenumber="14">
+          <span class="hits">8</span>
           
-          <code class="ruby">    flash[:notice] = &quot;Application Submitted&quot;</code>
+          <code class="ruby">        @favs.pets.delete_if{|key, value| key == id }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      flash[:notice] = &quot;Application Submitted&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      redirect_to &#39;/favorites&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">  private</code>
+          <code class="ruby">      flash[:notice] = &quot;Incomplete Application&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    def adopt_params</code>
+          <code class="ruby">      render :new</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="21">
           
-          <code class="ruby">      params.permit(:name, :address, :city, :state, :phone, :description)</code>
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    def pets_params</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      pets_list = []</code>
+          <code class="ruby">    def adopt_params</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
-          <code class="ruby">      params.each do |key, value|</code>
+          <code class="ruby">      params.permit(:name, :address, :city, :state, :phone, :zip, :description)</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="28">
-          <span class="hits">12</span>
-          
-          <code class="ruby">        if key == value</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="29">
-          <span class="hits">2</span>
-          
-          <code class="ruby">          pets_list &lt;&lt; key</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      pets_list</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def pets_params</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="31">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      pets_list = []</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="32">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      params.each do |key, value|</code>
+        </li>
+      
+        <li class="covered" data-hits="49" data-linenumber="33">
+          <span class="hits">49</span>
+          
+          <code class="ruby">        if key == value</code>
+        </li>
+      
+        <li class="covered" data-hits="5" data-linenumber="34">
+          <span class="hits">5</span>
+          
+          <code class="ruby">          pets_list &lt;&lt; key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="37">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      pets_list</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>
@@ -869,8 +919,8 @@
           <code class="ruby">  def favorite_pets</code>
         </li>
       
-        <li class="covered" data-hits="109" data-linenumber="7">
-          <span class="hits">109</span>
+        <li class="covered" data-hits="131" data-linenumber="7">
+          <span class="hits">131</span>
           
           <code class="ruby">    @favs ||= Favorite.new(session[:favorites])</code>
         </li>
@@ -897,8 +947,8 @@
     <h3>app/controllers/favorites_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -924,20 +974,20 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="4">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="4">
+          <span class="hits">16</span>
           
           <code class="ruby">    pet = Pet.find(params[:pet_id])</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="5">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="5">
+          <span class="hits">16</span>
           
           <code class="ruby">    session[:favorites] ||= Hash.new</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="6">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="6">
+          <span class="hits">16</span>
           
           <code class="ruby">    session[:favorites][pet.id] = {</code>
         </li>
@@ -960,14 +1010,14 @@
           <code class="ruby">    }</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="10">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="10">
+          <span class="hits">16</span>
           
           <code class="ruby">    redirect_to &quot;/pets/#{params[:pet_id]}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="12" data-linenumber="11">
-          <span class="hits">12</span>
+        <li class="covered" data-hits="16" data-linenumber="11">
+          <span class="hits">16</span>
           
           <code class="ruby">    flash[:notice] = &quot;Favorite added!&quot;</code>
         </li>
@@ -990,73 +1040,79 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="13" data-linenumber="15">
+          <span class="hits">13</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    @list = @favs.find_pets</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">  def destroy</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="18">
+        <li class="covered" data-hits="3" data-linenumber="19">
           <span class="hits">3</span>
           
           <code class="ruby">    if params[:id]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">      @favs.pets.delete(params[:id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to &quot;/pets/#{params[:id]}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
+        <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
           <code class="ruby">      session.delete(:favorites)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
+        <li class="covered" data-hits="2" data-linenumber="24">
           <span class="hits">2</span>
           
           <code class="ruby">      redirect_to &#39;/favorites&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>
@@ -1153,8 +1209,8 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="covered" data-hits="31" data-linenumber="13">
-          <span class="hits">31</span>
+        <li class="covered" data-hits="40" data-linenumber="13">
+          <span class="hits">40</span>
           
           <code class="ruby">     @pet = Pet.find(params[:id])</code>
         </li>
@@ -2288,8 +2344,8 @@
     <h3>app/poros/favorite.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -2315,8 +2371,8 @@
           <code class="ruby">  def initialize(hash)</code>
         </li>
       
-        <li class="covered" data-hits="109" data-linenumber="4">
-          <span class="hits">109</span>
+        <li class="covered" data-hits="131" data-linenumber="4">
+          <span class="hits">131</span>
           
           <code class="ruby">    @pets = hash ||= Hash.new</code>
         </li>
@@ -2339,8 +2395,8 @@
           <code class="ruby">  def count_of_pets</code>
         </li>
       
-        <li class="covered" data-hits="80" data-linenumber="8">
-          <span class="hits">80</span>
+        <li class="covered" data-hits="96" data-linenumber="8">
+          <span class="hits">96</span>
           
           <code class="ruby">    @pets.length</code>
         </li>
@@ -2352,6 +2408,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def find_pets</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="12">
+          <span class="hits">13</span>
+          
+          <code class="ruby">    Pet.select(&#39;pets.id, pets.name&#39;).joins(:adopts)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -3729,10 +3809,720 @@
         <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  post &#39;/adopts&#39;, to: &#39;adopts#create&#39;</code>
+          <code class="ruby">  post &#39;/adopts/new&#39;, to: &#39;adopts#create&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="2b445f1688cde88fe2ec524e9a26fab5d696ff6a">
+  <div class="header">
+    <h3>spec/features/adopts/user_gets_message_when_incomplete_adopt_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>35</b> relevant lines. 
+      <span class="green"><b>35</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe &quot;incomplete apply to adopt&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;sends you back when incomplete apply to adopt&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    shelter_1 = Shelter.create(name:    &quot;Denver Dog Shelter&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">                                address: &quot;123 Main St&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">                                city:    &quot;Denver&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">                                state:   &quot;CO&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">                                zip:     &quot;80206&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    pet_1 = Pet.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">      image: &quot;https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">      name: &quot;Sparky&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">      approximate_age: 7,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">      sex: &quot;male&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      shelter: shelter_1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">      description: &quot;woof!&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    pet_2 = Pet.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">      image: &quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzuv71T_e5kELaSqga2HQx10iNxvU6jlb9iwb8PN9HTZKaMhc&amp;s&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">      name: &quot;Spot&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      approximate_age: 7,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">      sex: &quot;male&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">      shelter: shelter_1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">      description: &quot;woof!&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/pets/#{pet_1.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Favorite this pet&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/pets/#{pet_2.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Favorite this pet&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/favorites&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Apply to Adopt&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(current_path).to eq(&quot;/adopts/new&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(page).to have_link(&quot;Sparky&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  page.check &quot;#{pet_1.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  page.check &quot;#{pet_2.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :name, with: &quot;P. Sherman&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :address, with: &quot;42 Wallaby Way&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :city, with: &quot;Sydney&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :state, with: &quot;Florida&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :zip, with: &quot;98789&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :phone, with: &quot;555-867-5309&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Submit&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(current_path).to eq(&quot;/adopts/new&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(page).to have_content(&quot;Incomplete Application&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :name, with: &quot;P. Sherman&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :address, with: &quot;42 Wallaby Way&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="50">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :city, with: &quot;Sydney&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="51">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :state, with: &quot;Florida&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :zip, with: &quot;98789&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :phone, with: &quot;555-867-5309&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :description, with: &quot;I have a dog ranch, and I&#39;d love to adopt!&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Submit&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="57">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(current_path).to eq(&quot;/favorites&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(page).to have_content(&quot;Application Submitted&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="cb507beb863052a9e34a6515f9f5615449916202">
+  <div class="header">
+    <h3>spec/features/adopts/user_sees_pets_with_applications_list_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>28</b> relevant lines. 
+      <span class="green"><b>28</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;rails_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">RSpec.describe &quot;list of pets with pending adoptions&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &quot;has a list of pets with adoptions&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    shelter_1 = Shelter.create(name:    &quot;Denver Dog Shelter&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">                                address: &quot;123 Main St&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby">                                city:    &quot;Denver&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">                                state:   &quot;CO&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">                                zip:     &quot;80206&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    pet_1 = Pet.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">      image: &quot;https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">      name: &quot;Sparky&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">      approximate_age: 7,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">      sex: &quot;male&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">      shelter: shelter_1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">      description: &quot;woof!&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    pet_2 = Pet.create(</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">      image: &quot;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzuv71T_e5kELaSqga2HQx10iNxvU6jlb9iwb8PN9HTZKaMhc&amp;s&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">      name: &quot;Spot&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      approximate_age: 7,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
+          
+          
+          <code class="ruby">      sex: &quot;male&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">      shelter: shelter_1,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">      description: &quot;woof!&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/pets/#{pet_1.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Favorite this pet&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/pets/#{pet_2.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Favorite this pet&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  visit &quot;/favorites&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Apply to Adopt&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(current_path).to eq(&quot;/adopts/new&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(page).to have_link(&quot;Sparky&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  page.check &quot;#{pet_1.id}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :name, with: &quot;P. Sherman&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="37">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :address, with: &quot;42 Wallaby Way&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :city, with: &quot;Sydney&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :state, with: &quot;Florida&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="40">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :phone, with: &quot;555-867-5309&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :zip, with: &quot;80990&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  fill_in :description, with: &quot;I have a dog ranch, and I&#39;d love to adopt!&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  click_button &quot;Submit&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="45">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  expect(current_path).to eq(&#39;/favorites&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    within &quot;#pending_adoptions&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(page).to_not have_link(&quot;#{pet_2.name}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="48">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(page).to have_link(&quot;#{pet_1.name}&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_link &quot;#{pet_1.name}&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="50">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="51">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
           
           
           <code class="ruby">end</code>

@@ -38,12 +38,19 @@ RSpec.describe "incomplete apply to adopt" do
   fill_in :address, with: "42 Wallaby Way"
   fill_in :city, with: "Sydney"
   fill_in :state, with: "Florida"
+  fill_in :zip, with: "98789"
   fill_in :phone, with: "555-867-5309"
   click_button "Submit"
 
   expect(current_path).to eq("/adopts/new")
   expect(page).to have_content("Incomplete Application")
 
+  fill_in :name, with: "P. Sherman"
+  fill_in :address, with: "42 Wallaby Way"
+  fill_in :city, with: "Sydney"
+  fill_in :state, with: "Florida"
+  fill_in :zip, with: "98789"
+  fill_in :phone, with: "555-867-5309"
   fill_in :description, with: "I have a dog ranch, and I'd love to adopt!"
   click_button "Submit"
 

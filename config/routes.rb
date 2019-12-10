@@ -32,5 +32,5 @@ Rails.application.routes.draw do
 
 
   get '/adopts/new', to: 'adopts#new'
-  post '/adopts', to: 'adopts#create'
+  post '/adopts/new', to: 'adopts#create'
 end

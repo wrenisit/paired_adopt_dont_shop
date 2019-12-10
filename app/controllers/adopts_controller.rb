@@ -21,6 +21,8 @@ class AdoptsController < ApplicationController
     end
   end
 
+  
+
 
   private
 

@@ -7,4 +7,7 @@ class Favorite
   def count_of_pets
     @pets.length
   end
+
+  def find_pets(favorites)
+  end
 end

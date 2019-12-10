@@ -9,7 +9,7 @@ RSpec.describe "pet index page", type: :feature do
                                 zip:     "80206")
     @pet = Pet.create(
       image: "https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg",
-      name: "Sparky",
+      name: "Sporky",
       approximate_age: 7,
       sex: "male",
       shelter: @shelter_1,

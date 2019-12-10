@@ -39,6 +39,7 @@ RSpec.describe "apply to adopt" do
   fill_in :city, with: "Sydney"
   fill_in :state, with: "Florida"
   fill_in :phone, with: "555-867-5309"
+  fill_in :zip, with: "80990"
   fill_in :description, with: "I have a dog ranch, and I'd love to adopt!"
   click_button "Submit"
 

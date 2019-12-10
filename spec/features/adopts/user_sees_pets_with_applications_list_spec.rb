@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "apply to adopt" do
-  it "has a form to apply to adopt" do
+RSpec.describe "list of pets with pending adoptions" do
+  it "has a list of pets with adoptions" do
     shelter_1 = Shelter.create(name:    "Denver Dog Shelter",
                                 address: "123 Main St",
                                 city:    "Denver",
@@ -33,7 +33,6 @@ RSpec.describe "apply to adopt" do
   expect(current_path).to eq("/adopts/new")
   expect(page).to have_link("Sparky")
   page.check "#{pet_1.id}"
-  page.check "#{pet_2.id}"
   fill_in :name, with: "P. Sherman"
   fill_in :address, with: "42 Wallaby Way"
   fill_in :city, with: "Sydney"
@@ -44,12 +43,10 @@ RSpec.describe "apply to adopt" do
   click_button "Submit"
 
   expect(current_path).to eq('/favorites')
-  expect(page).to have_content("Application Submitted")
-    within "#favorites" do
-      expect(page).to_not have_content("#{pet_1.name}")
-      expect(page).to_not have_content("#{pet_1.image}")
-      expect(page).to_not have_content("#{pet_2.name}")
-      expect(page).to_not have_content("#{pet_2.image}")
+    within "#pending_adoptions" do
+      expect(page).to_not have_link("#{pet_2.name}")
+      expect(page).to have_link("#{pet_1.name}")
+      click_link "#{pet_1.name}"
     end
   end
 end

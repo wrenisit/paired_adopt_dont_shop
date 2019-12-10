@@ -10,7 +10,7 @@ class AdoptsController < ApplicationController
     adopt = Adopt.new(@application_params)
     if adopt.save
       @adopt_pets.each do |id|
-        PetAdopt.new(pet_id: id, adopt_id: adopt.id)
+        PetAdopt.create(pet_id: id, adopt_id: adopt.id)
         @favs.pets.delete_if{|key, value| key == id }
       end
       flash[:notice] = "Application Submitted"
@@ -20,7 +20,6 @@ class AdoptsController < ApplicationController
       render :new
     end
   end
-
 
   private
 

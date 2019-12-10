@@ -1,0 +1,6 @@
+
+<h1>Applications</h1>
+<% @adopts.each do |app| %>
+<section id="adopt-<%= app.id %>">
+  <h3><a href="/adopts/<%= app.id %>"><%= app.name %></a></h3>
+<% end %>

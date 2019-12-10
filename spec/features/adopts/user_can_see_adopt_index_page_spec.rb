@@ -23,7 +23,7 @@ RSpec.describe "adopt index" do
       shelter: shelter_1,
       description: "woof!")
 
-    adopt_1 = Adopt.new(
+    adopt_1 = Adopt.create(
       name: "P Sherman",
       address: "42 Wallaby Way",
       city: "Sydney",
@@ -31,7 +31,7 @@ RSpec.describe "adopt index" do
       zip: "87654",
       phone: "555-867-5309",
       description: "woof")
-    adopt_2 = Adopt.new(
+    adopt_2 = Adopt.create(
       name: "Bob Hope",
       address: "1 Plaza",
       city: "Seoul",

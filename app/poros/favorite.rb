@@ -8,6 +8,7 @@ class Favorite
     @pets.length
   end
 
-  def find_pets(favorites)
+  def find_pets
+    Pet.select('pets.id, pets.name').joins(:adopts)
   end
 end

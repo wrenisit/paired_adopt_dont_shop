@@ -13,3 +13,10 @@
 <% end %>
 <h3><%= button_to "Remove All Favorited Pets", "/favorites", method: :delete %></h3>
 <h3><%= button_to "Apply to Adopt", "/adopts/new", method: :get %></h3>
+
+  <h2>Pending Adoptions</h2>
+  <section id="pending_adoptions">
+    <% @list.each do |pet| %>
+      <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}", method: :get %></h2>
+      <% end %>
+  </section>

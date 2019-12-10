@@ -44,9 +44,9 @@ RSpec.describe "list of pets with pending adoptions" do
 
   expect(current_path).to eq('/favorites')
     within "#pending_adoptions" do
+      expect(page).to_not have_link("#{pet_2.name}")
       expect(page).to have_link("#{pet_1.name}")
       click_link "#{pet_1.name}"
-      expect(page).to_not have_link("#{pet_2.name}")
     end
   end
 end

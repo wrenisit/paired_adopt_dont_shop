@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
   end
 
   def index
+    @list = @favs.find_pets
   end
 
   def destroy

@@ -1,5 +1,7 @@
 
 <h1>Your Favorite Pets</h1>
+<section id="favorites">
+
 <% if @favs.pets.empty? == false %>
   <% @favs.pets.each do |id, info_hash| %>
   <section id="favorite-<%= id %>">
@@ -13,6 +15,7 @@
 <% end %>
 <h3><%= button_to "Remove All Favorited Pets", "/favorites", method: :delete %></h3>
 <h3><%= button_to "Apply to Adopt", "/adopts/new", method: :get %></h3>
+</section>
 
   <h2>Pending Adoptions</h2>
   <section id="pending_adoptions">

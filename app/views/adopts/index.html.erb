@@ -1,5 +1,10 @@
 <h1>Applications</h1>
 <% @adopts.each do |app| %>
-<section id="adopt-<%= app.id %>">
-  <h3><a href="/adopts/<%= app.id %>"><%= app.name %></a></h3>
+  <% if @adopts.nil? %>
+    <h3>There are no applications to adopt this pet.</h3>
+  <% else %>
+  <section id="adopt-<%= app.id %>">
+    <h3><a href="/adopts/<%= app.id %>"><%= app.name %></a></h3>
+  </section>
+  <% end %>
 <% end %>

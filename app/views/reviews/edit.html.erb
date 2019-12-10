@@ -1,14 +1,5 @@
-<h1> Edit Review </h1>
-
-  <%= form_tag "/shelters/#{@shelter_id}/#{@review.id}/edit", method: :patch do %>
-    <%= label_tag :title %>
-    <%= text_field_tag :title, @review.title  %></br>
-
-    <%= label_tag :rating %>
-    <%= select_tag :rating, options_for_select([1,2,3,4,5]) %></br>
-
-    <%= label_tag :content %>
-    <%= text_field_tag :content, @review.content %></br>
-
-    <%= submit_tag "Submit" %>
-  <% end %>
+<h1> Edit review for <%= @shelter_id %> </h1>
+<%= render partial: 'form', locals: { path: "/shelters/#{@shelter_id}/#{@review.id}/edit",
+                                      method: :patch,
+                                      button_text: "Edit Review"
+                                    } %>

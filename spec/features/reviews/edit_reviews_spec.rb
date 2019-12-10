@@ -26,9 +26,9 @@ RSpec.describe "user can edit a review", type: :feature do
    end
     expect(current_path).to eq("/shelters/#{shelter_1.id}/#{shelter_review_1.id}/edit")
     fill_in :title, with: "No Thanks!"
-    #fill_in :rating, with: 1
+    select(1, :from => "rating")
     fill_in :content, with: "I had to wait 27 seconds for the attendant to say Hi to me! Outrageous!"
-    click_button("Submit")
+    click_button("Edit Review")
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
 

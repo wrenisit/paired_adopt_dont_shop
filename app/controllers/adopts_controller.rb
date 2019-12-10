@@ -1,7 +1,7 @@
 class AdoptsController < ApplicationController
 
   def new
-    #@favorites = Pet.find(sessions[:favorites].split(','))
+    #@favorites = Pet.find(sessions[:favorites]
   end
 
   def create
@@ -21,6 +21,10 @@ class AdoptsController < ApplicationController
     end
   end
 
+  def show
+    @adopt = Adopt.find(params[:id])
+    @adopt_pets = PetAdopt.all
+  end
 
   private
 

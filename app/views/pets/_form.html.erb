@@ -1,0 +1,18 @@
+<%= form_tag path, method: method do %>
+  <%= label_tag :image_link %>
+  <%= text_field_tag :image %>
+
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
+
+  <%= label_tag :description %>
+  <%= text_field_tag :description %>
+
+  <%= label_tag :approximate_age %>
+  <%= text_field_tag :approximate_age %>
+
+  <%= label_tag :sex %>
+  <%= select_tag :sex, options_for_select(["Male", "Female"]) %>
+
+  <%= submit_tag button_text %>
+<% end %>

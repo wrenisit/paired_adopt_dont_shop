@@ -45,9 +45,11 @@ RSpec.describe "apply to adopt" do
 
   expect(current_path).to eq('/favorites')
   expect(page).to have_content("Application Submitted")
-  expect(page).to_not have_content("#{pet_1.name}")
-  expect(page).to_not have_content("#{pet_1.image}")
-  expect(page).to_not have_content("#{pet_2.name}")
-  expect(page).to_not have_content("#{pet_2.image}")
+    within "#favorites" do
+      expect(page).to_not have_content("#{pet_1.name}")
+      expect(page).to_not have_content("#{pet_1.image}")
+      expect(page).to_not have_content("#{pet_2.name}")
+      expect(page).to_not have_content("#{pet_2.image}")
+    end
   end
 end

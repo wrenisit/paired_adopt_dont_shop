@@ -1,7 +1,7 @@
 <h1> Adopt a New Pet </h1>
 <%= form_tag '/adopts' do %>
   <% @favs.pets.each do |pet_id, pet_info| %>
-    <%= check_box_tag("#{pet_id}", "#{pet_info['name']}") %>
+    <%= check_box_tag("#{pet_id}", "#{pet_id}") %>
     <%= link_to pet_info["name"], "/pets/#{pet_id}" %>
   <% end %>
 

@@ -1119,10 +1119,18 @@
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/adopt.rb": [
         1,
+        1,
+        1,
+        1,
         null,
         1,
-        1,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/models/application_record.rb": [
@@ -1322,12 +1330,25 @@
         1,
         1,
         1,
+        5,
+        null,
+        1,
         null,
         null,
         null,
         1,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        12,
+        2,
+        null,
+        null,
         1,
         null,
         null
@@ -1424,6 +1445,6 @@
         null
       ]
     },
-    "timestamp": 1575931592
+    "timestamp": 1575945217
   }
 }

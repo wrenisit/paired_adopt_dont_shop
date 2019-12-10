@@ -7,19 +7,25 @@ class AdoptsController < ApplicationController
   def create
     @application_params = adopt_params
     @adopt_pets = pets_params
-    @adopt_pets.each do |id|
-      @favs.pets.delete_if{|key, value| key == id }
+    adopt = Adopt.new(@application_params)
+    if adopt.save
+      @adopt_pets.each do |id|
+        PetAdopt.new(pet_id: id, adopt_id: adopt.id)
+        @favs.pets.delete_if{|key, value| key == id }
+      end
+      flash[:notice] = "Application Submitted"
+      redirect_to '/favorites'
+    else
+      flash[:notice] = "Incomplete Application"
+      render :new
     end
-    redirect_to '/favorites'
-    flash[:notice] = "Application Submitted"
-
   end
 
 
   private
 
     def adopt_params
-      params.permit(:name, :address, :city, :state, :phone, :description)
+      params.permit(:name, :address, :city, :state, :phone, :zip, :description)
     end
 
     def pets_params

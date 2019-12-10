@@ -11,6 +11,8 @@ class AdoptsController < ApplicationController
       @favs.pets.delete_if{|key, value| key == id }
     end
     redirect_to '/favorites'
+    flash[:notice] = "Application Submitted"
+
   end
 
 

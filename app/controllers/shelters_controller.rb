@@ -16,6 +16,7 @@ class SheltersController < ApplicationController
   def show
     @shelter = Shelter.find(params[:id])
     @reviews = @shelter.reviews
+    @count_of_adoptions = @shelter.find_adoptions
   end
 
   def edit

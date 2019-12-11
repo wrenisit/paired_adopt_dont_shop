@@ -1,4 +1,10 @@
 
+<section id="stats">
+  <h3>Shelter Statistics</h3>
+  <h3>Pet Count: <%= @shelter.pets.count %></h3>
+  <h3>Average Review Rating: <%= @shelter.reviews.average(:rating).to_i %></h3>
+  <h3>Adoptions On File: <%= @count_of_adoptions %></h3>
+  </section>
 <h2><%= @shelter.name %></h2>
 
 <ul>

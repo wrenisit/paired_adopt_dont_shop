@@ -10,3 +10,14 @@
 
 
   <h1> Pets applied for</h1>
+  <section id="applied_for_adoptions">
+    <% @pets.each do |pet| %>
+      <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
+      <% if pet.adoptable? %>
+        <h4><%= link_to "Approve #{pet.name} adoption", "/pets/#{pet.id}" %> </h4>
+      <% else %>
+        <h4><% link_to "Revoke #{pet.name} adoption", "/adopts/#{@adopt_application.id}" %></h4>
+      <% end %>
+      <h4>On hold for <%= @adopt.name %></h4>
+    <% end %>
+  </section>

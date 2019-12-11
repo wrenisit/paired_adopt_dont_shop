@@ -36,6 +36,7 @@ class PetsController < ApplicationController
   end
 
   def destroy
+    @favs.pets.delete(params[:id])
     Pet.destroy(params[:id])
     redirect_to "/pets"
   end

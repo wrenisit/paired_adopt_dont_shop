@@ -1,7 +1,7 @@
 class AdoptsController < ApplicationController
 
   def new
-    #@favorites = Pet.find(sessions[:favorites].split(','))
+    #@favorites = Pet.find(sessions[:favorites]
   end
 
   def create
@@ -20,6 +20,13 @@ class AdoptsController < ApplicationController
       render :new
     end
   end
+
+  def show
+    @adopt = Adopt.find(params[:id])
+    adopt_pets = PetAdopt.all.pluck(:pet_id)
+    @pets = Pet.find(adopt_pets)
+  end
+
 
   private
 

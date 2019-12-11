@@ -8,6 +8,7 @@ RSpec.describe "User can see all adoption appliations" do
                                 state:   "CO",
                                 zip:     "80206")
     pet_1 = Pet.create(
+      image: "https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg",
       name: "Sparky",
       approximate_age: 7,
       sex: "male",

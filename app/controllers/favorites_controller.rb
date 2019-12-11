@@ -9,7 +9,6 @@ class FavoritesController < ApplicationController
     }
     redirect_to "/pets/#{params[:pet_id]}"
     flash[:notice] = "Favorite added!"
-    require "pry"; binding.pry
   end
 
   def index

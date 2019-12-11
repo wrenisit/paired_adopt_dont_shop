@@ -58,6 +58,7 @@ RSpec.describe "shelter ID page", type: :feature do
       phone: "555-867-5309",
       description: "woof")
     PetAdopt.create(pet_id: @dog_1.id, adopt_id: @adopt_1.id)
+    visit "/shelters/#{@shelter_1.id}"
     within "#stats" do
       expect(page).to have_content("Shelter Statistics")
       expect(page).to have_content("Pet Count: 1")

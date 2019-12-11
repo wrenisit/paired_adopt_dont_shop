@@ -1,9 +1,9 @@
 class PetAdoptsController < ApplicationController
 
   def update
-    @adopt_pet = PetAdopt.find_by(pet_id params[:pet_id], adopt_id: params[:adopt_id])
+    pet = Pet.find(params[:id])
+    pet.toggle_adoption_status
+    redirect_to "/pets/#{pet.id}"
     #add column to pet_adopts table ((:approved))
-    @adopt_pet.pet.toggle(:toggle_adoption_status)
-    toggle.save
   end
 end

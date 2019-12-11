@@ -6,7 +6,7 @@ class Pet < ApplicationRecord
   validates_presence_of :image, :name, :approximate_age, :sex, :shelter, :description
 
   def toggle_adoption_status
-    toggle(:adoptable)
-    save
+    self.adoptable = !self.adoptable
+    self.save!
   end
 end

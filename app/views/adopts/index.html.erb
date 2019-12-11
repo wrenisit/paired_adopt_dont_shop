@@ -1,0 +1,10 @@
+<h1>Applications</h1>
+  <% if @adopts.empty? %>
+    <h3>There are no applications to adopt this pet.</h3>
+  <% else %>
+  <% @adopts.each do |app| %>
+  <section id="adopt-<%= app.id %>">
+    <h3><a href="/adopts/<%= app.id %>"><%= app.name %></a></h3>
+  </section>
+  <% end %>
+<% end %>

@@ -21,12 +21,16 @@ class AdoptsController < ApplicationController
     end
   end
 
+  def index
+    pet = Pet.find_by(id: params[:id])
+    @adopts = pet.adopts
+  end
+
   def show
     @adopt = Adopt.find(params[:id])
     adopt_pets = PetAdopt.all.pluck(:pet_id)
     @pets = Pet.find(adopt_pets)
   end
-
 
   private
 

@@ -13,4 +13,14 @@ RSpec.describe 'create new shelter', type: :feature do
     expect(page).to have_current_path("/shelters")
     expect(page).to have_content("New shelter!")
   end
+
+  it "Can not create a shelter with missing fields" do
+    visit "/shelters/new"
+    fill_in :name, with: "New shelter!"
+    fill_in :city, with: "Denver"
+    fill_in :state, with: "CO"
+    fill_in :zip, with: "80206"
+    click_button('Create new shelter')
+    expect(page).to have_content("Cannot create shelter. Missing required information.")
+  end
 end

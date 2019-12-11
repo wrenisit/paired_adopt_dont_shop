@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "User can see all adoption appliations" do
-  it "Can see all pending adoptions" do
+RSpec.describe "User can approve pet adoption" do
+  it "Can approve adoption" do
     shelter_1 = Shelter.create(name:    "Denver Dog Shelter",
                                 address: "123 Main St",
                                 city:    "Denver",
                                 state:   "CO",
                                 zip:     "80206")
     pet_1 = Pet.create(
+      image: "https://cdn3-www.dogtime.com/assets/uploads/2018/10/puppies-cover.jpg",
       name: "Sparky",
       approximate_age: 7,
       sex: "male",
@@ -20,17 +21,13 @@ RSpec.describe "User can see all adoption appliations" do
                                         description: "I have a dog ranch, and I'd love to adopt!")
 
      adopt_application.pets << pet_1
-      visit "/adopts/#{adopt_application.id}"
 
-      expect(page).to have_content(adopt_application.name)
-      expect(page).to have_content(adopt_application.address)
-      expect(page).to have_content(adopt_application.city)
-      expect(page).to have_content(adopt_application.state)
-      expect(page).to have_content(adopt_application.zip)
-      expect(page).to have_content(adopt_application.description)
+     visit "/adopts/#{adopt_application.id}"
 
-    # within "#applied_for_adoptions" do
-    #   expect(page).to have_link(pet_1.name)
-    # end
-  end
+     within "#applied_for_adoptions"
+       click_on("Approve #{pet_1.name} adoption")
+       expect(page).to have_current_path("/pets/#{pet_1.id}")
+       expect(page).to have_content("Pending Adoption")
+       expect(page).to have_content("On hold for #{adopt_application.name}")
+ end
 end

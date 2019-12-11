@@ -30,8 +30,8 @@ Rails.application.routes.draw do
   get '/favorites', to: 'favorites#index'
   delete '/favorites', to: 'favorites#destroy'
 
-
   get '/adopts/new', to: 'adopts#new'
   post '/adopts/new', to: 'adopts#create'
   get '/adopts/index/:id', to: 'adopts#index'
+  get '/adopts/:id', to: 'adopts#show'
 end

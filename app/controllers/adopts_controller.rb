@@ -23,9 +23,8 @@ class AdoptsController < ApplicationController
 
   def show
     @adopt = Adopt.find(params[:id])
-    adopt_pets = PetAdopt.all
-    ids_of_pets = adopt_pets.pluck(:pet_id)
-    @pets = Pet.find(ids_of_pets)
+    adopt_pets = PetAdopt.all.pluck(:pet_id)
+    @pets = Pet.find(adopt_pets)
   end
 
 

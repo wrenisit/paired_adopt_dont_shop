@@ -24,21 +24,21 @@ RSpec.describe "User can delete favorited pets" do
       description: "woof!")
 
   visit "/pets/#{pet_1.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
   visit "/pets/#{pet_2.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
 
   visit "/favorites"
 
     within "#favorite-#{pet_1.id}" do
       expect(page).to have_content("Sparky")
       expect(page).to have_css("img[src*='www.dogtime.com/assets/uploads']")
-      click_button "Remove #{pet_1.name}"
+      click_on "Remove #{pet_1.name}"
     end
     expect(page).to have_content("Favorite Pets: 1")
     expect(current_path).to eq("/pets/#{pet_1.id}")
-    expect(page).to_not have_button("Remove #{pet_1.name}")
-    expect(page).to have_button("Favorite this pet")
+    expect(page).to_not have_link("Remove #{pet_1.name}")
+    expect(page).to have_link("Favorite this pet")
 
   end
 end

@@ -11,9 +11,9 @@ RSpec.describe "shelter ID page", type: :feature do
     visit "/shelters/#{@shelter_1.id}"
     within "#stats" do
       expect(page).to have_content("Shelter Statistics")
-      expect(page).to have_content("Pet Count: 0")
-      expect(page).to have_content("Average Review Rating: 0")
-      expect(page).to have_content("Adoptions On File: 0")
+      expect(page).to have_content("Pet Count: &nbsp\n0")
+      expect(page).to have_content("Average Review Rating: &nbsp\n0")
+      expect(page).to have_content("Adoptions On File: &nbsp\n0")
     end
 
     @dog_1 = @shelter_1.pets.create!( image: "https://www.washingtonpost.com/resizer/kPkFQsQjvSIjfXG-mFXDEpxq6-4=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg",
@@ -26,9 +26,9 @@ RSpec.describe "shelter ID page", type: :feature do
     visit "/shelters/#{@shelter_1.id}"
     within "#stats" do
       expect(page).to have_content("Shelter Statistics")
-      expect(page).to have_content("Pet Count: 1")
-      expect(page).to have_content("Average Review Rating: 0")
-      expect(page).to have_content("Adoptions On File: 0")
+      expect(page).to have_content("Pet Count: &nbsp\n1")
+      expect(page).to have_content("Average Review Rating: &nbsp\n0")
+      expect(page).to have_content("Adoptions On File: &nbsp\n0")
     end
 
     @shelter_review_1 = @shelter_1.reviews.create(
@@ -45,9 +45,9 @@ RSpec.describe "shelter ID page", type: :feature do
     visit "/shelters/#{@shelter_1.id}"
     within "#stats" do
       expect(page).to have_content("Shelter Statistics")
-      expect(page).to have_content("Pet Count: 1")
-      expect(page).to have_content("Average Review Rating: 4")
-      expect(page).to have_content("Adoptions On File: 0")
+      expect(page).to have_content("Pet Count: &nbsp\n1")
+      expect(page).to have_content("Average Review Rating: &nbsp\n4")
+      expect(page).to have_content("Adoptions On File: &nbsp\n0")
     end
     @adopt_1 = Adopt.create(
       name: "P Sherman",
@@ -61,9 +61,9 @@ RSpec.describe "shelter ID page", type: :feature do
     visit "/shelters/#{@shelter_1.id}"
     within "#stats" do
       expect(page).to have_content("Shelter Statistics")
-      expect(page).to have_content("Pet Count: 1")
-      expect(page).to have_content("Average Review Rating: 4")
-      expect(page).to have_content("Adoptions On File: 1")
+      expect(page).to have_content("Pet Count: &nbsp\n1")
+      expect(page).to have_content("Average Review Rating: &nbsp\n4")
+      expect(page).to have_content("Adoptions On File: &nbsp\n1")
     end
   end
 end

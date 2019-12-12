@@ -43,7 +43,7 @@ RSpec.describe "adopt index" do
     PetAdopt.create(pet_id: pet_2.id, adopt_id: adopt_2.id)
 
   visit "/pets/#{pet_1.id}"
-  click_button "View Applications To Adopt #{pet_1.name}"
+  click_on "View Applications To Adopt #{pet_1.name}"
   expect(page).to have_link("#{adopt_1.name}")
   expect(page).to_not have_link("#{adopt_2.name}")
   end

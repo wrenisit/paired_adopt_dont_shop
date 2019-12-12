@@ -16,8 +16,8 @@
       <% if pet.adoptable? %>
         <h4><%= link_to "Approve #{pet.name} adoption", "/pets/#{pet.id}/pet_adopts", method: :patch %> </h4>
       <% else %>
-        <h4><% link_to "Revoke #{pet.name} adoption", "/adopts/#{@adopt.id}" %></h4>
+        <h4><%= link_to "Revoke #{pet.name} adoption", "/pets/#{pet.id}/pet_adopts", method: :patch %></h4>
+        <h4>On hold for <%= @name %></h4>
       <% end %>
-      <h4>On hold for <%= @adopt.name %></h4>
     <% end %>
   </section>

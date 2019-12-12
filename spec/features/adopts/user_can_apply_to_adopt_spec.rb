@@ -24,12 +24,12 @@ RSpec.describe "apply to adopt" do
       description: "woof!")
 
   visit "/pets/#{pet_1.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
   visit "/pets/#{pet_2.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
 
   visit "/favorites"
-  click_button "Apply to Adopt"
+  click_on "Apply to Adopt"
   expect(current_path).to eq("/adopts/new")
   expect(page).to have_link("Sparky")
   page.check "#{pet_1.id}"

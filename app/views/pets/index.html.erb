@@ -1,6 +1,10 @@
 
+<<<<<<< HEAD
 <% @pets %>
+=======
+>>>>>>> 7734df1795bc72ac8f8780a57af8d3540e3ff796
 <h1>Pets</h1>
+<section class="grid">
 <% @pets.each do |pet| %>
 <h3>Name: &nbsp<%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>
   <img src=<%= pet.image %>>
@@ -14,14 +18,11 @@
       Pending Adoption
     <% end %></p></li>
   <li><p1>Current shelter: &nbsp </p1><p><%= link_to "#{pet.shelter&.name}", "/shelters/#{pet.shelter_id}" %></p></li>
+  <li><p><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %></p></li>
+  <li><p><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %></p></li>
 </ul>
-  <%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %>
-  <%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %>
-  </br>
-  </br>
-  </br>
 <% end %>
-
+</section>
 <% if @shelter %>
   <h3><%= link_to 'Add New Adoptable Pet', "/shelters/#{@shelter.id}/pets/new" %></h3>
 <% end %>

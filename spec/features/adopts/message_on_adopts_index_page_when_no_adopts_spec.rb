@@ -25,7 +25,7 @@ RSpec.describe "adopt index" do
 
 
   visit "/pets/#{pet_1.id}"
-  click_button "View Applications To Adopt #{pet_1.name}"
+  click_on "View Applications To Adopt #{pet_1.name}"
 
   expect(page).to have_content("There are no applications to adopt this pet.")
   end

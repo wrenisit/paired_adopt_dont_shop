@@ -25,7 +25,6 @@ RSpec.describe "User can approve pet adoption" do
      visit "/adopts/#{adopt_application.id}"
 
      within "#applied_for_adoptions"
-      expect(page).to have_content("On hold for #{adopt_application.name}")
       click_on("Approve #{pet_1.name} adoption")
       expect(page).to have_current_path("/pets/#{pet_1.id}")
       expect(page).to have_content("Pending Adoption")

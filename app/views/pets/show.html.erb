@@ -13,7 +13,9 @@
 <li><p1>Current shelter:&nbsp</p1><p> <%= link_to "#{@pet.shelter&.name}", "/shelters/#{@pet.shelter_id}" %></p></li>
 </ul>
 <%= link_to "Edit #{@pet.name}", "/pets/#{@pet.id}/edit" %></br>
-<%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
+<% if @pet.adoptable %>
+  <%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
+<% end %>
 <% if @favs.pets.keys.include?("#{@pet.id}") %>
   <%= button_to "Remove From Favorites", "/favorites/#{@pet.id}", method: :delete %>
 <% else %>

@@ -2032,3 +2032,554 @@ Processing by PetsController#show as HTML
 Completed 200 OK in 21ms (Views: 14.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/shelters" for ::1 at 2019-12-11 11:36:52 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.8ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 211ms (Views: 187.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/shelters/2" for ::1 at 2019-12-11 11:36:57 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShelter Load (0.9ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  Rendered shelters/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 52ms (Views: 15.5ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/shelters/2/new_review" for ::1 at 2019-12-11 11:37:04 -0700
+Processing by ReviewsController#new as HTML
+  Parameters: {"shelter_id"=>"2"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (1.2ms)
+  Rendered reviews/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/shelters/2/new_review" for ::1 at 2019-12-11 11:37:22 -0700
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pa+3yvpaNViveQKiWtG6r/c/jUSh7znJOaVUwOH98DFsbPWforrf2wHBsLgpnpAChJtMUQ+jtsWUA3ulsGucgg==", "title"=>"Yay!", "rating"=>"5", "content"=>"What A Nice place!", "opt_picture"=>"", "commit"=>"Create new review", "shelter_id"=>"2"}
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameters: :utf8, :authenticity_token, :opt_picture, :commit, :shelter_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "shelter_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Yay!"], ["rating", 5], ["content", "What A Nice place!"], ["shelter_id", 2]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/shelters/2
+Completed 302 Found in 25ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/shelters/2" for ::1 at 2019-12-11 11:37:22 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  Rendered shelters/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-11 11:37:36 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mPet Load (1.4ms)[0m  [1m[34mSELECT pets.id, pets.name FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id"[0m
+  Rendered favorites/index.html.erb within layouts/application (36.4ms)
+Completed 200 OK in 55ms (Views: 42.0ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/pets/4" for ::1 at 2019-12-11 11:37:39 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"authenticity_token"=>"bN7244Cn+Blq5mbmdmFe6nyHykuFo1VHy/E8kzTZ5lk9HbS22EcSmsRe1PwFLnRHDyMLXivv2ktmVxP2ZU+K6g==", "id"=>"4"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/adopts/index/4" for ::1 at 2019-12-11 11:37:43 -0700
+Processing by AdoptsController#index as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering adopts/index.html.erb within layouts/application
+  [1m[36mAdopt Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "adopts" INNER JOIN "pet_adopts" ON "adopts"."id" = "pet_adopts"."adopt_id" WHERE "pet_adopts"."pet_id" = $1 LIMIT $2[0m  [["pet_id", 4], ["LIMIT", 1]]
+  [1m[36mAdopt Load (0.3ms)[0m  [1m[34mSELECT "adopts".* FROM "adopts" INNER JOIN "pet_adopts" ON "adopts"."id" = "pet_adopts"."adopt_id" WHERE "pet_adopts"."pet_id" = $1[0m  [["pet_id", 4]]
+  Rendered adopts/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 47ms (Views: 34.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/adopts/2" for ::1 at 2019-12-11 11:37:45 -0700
+Processing by AdoptsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdopt Load (0.6ms)[0m  [1m[34mSELECT  "adopts".* FROM "adopts" WHERE "adopts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "pet_adopts"."pet_id" FROM "pet_adopts"[0m
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering adopts/show.html.erb within layouts/application
+  Rendered adopts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 16.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-11 11:39:01 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (1.8ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 49ms (Views: 38.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-11 11:39:03 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT pets.id, pets.name FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id"[0m
+  Rendered favorites/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-11 11:39:08 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 24ms (Views: 17.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-11 14:20:46 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 315ms (Views: 272.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/shelters/2" for ::1 at 2019-12-11 14:20:50 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 2]]
+  Rendered shelters/show.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 109ms (Views: 28.7ms | ActiveRecord: 21.3ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-11 14:20:52 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pets/1" for ::1 at 2019-12-11 14:20:58 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-11 14:20:59 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 14.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shelters/1" for ::1 at 2019-12-11 14:21:00 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets" WHERE "pets"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  Rendered shelters/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-11 14:26:39 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 197ms (Views: 165.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-11 14:26:43 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT pets.id, pets.name FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id"[0m
+  Rendered favorites/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 62ms (Views: 40.6ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/pets/1" for ::1 at 2019-12-11 14:26:51 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/pets/1" for ::1 at 2019-12-11 14:26:55 -0700
+Processing by PetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NfYawWqmvIcYmQzw3QP4pnnrJQHlzcSUo6OpU7QE5cFkNViUMkZWBLYhvuquTNILCk/kFEuBS5gOBYY25ZKJcg==", "id"=>"1"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 6ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-11 14:26:55 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-11 14:26:57 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mPet Load (1.1ms)[0m  [1m[34mSELECT pets.id, pets.name FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id"[0m
+  Rendered favorites/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pets/1" for ::1 at 2019-12-11 14:27:01 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=1):
+  
+app/controllers/pets_controller.rb:13:in `show'
+Started GET "/shelters" for ::1 at 2019-12-11 14:37:24 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.7ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 182ms (Views: 163.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-11 14:37:27 -0700
+Processing by FavoritesController#index as HTML
+  Rendering favorites/index.html.erb within layouts/application
+  [1m[36mPet Load (1.0ms)[0m  [1m[34mSELECT pets.id, pets.name FROM "pets" INNER JOIN "pet_adopts" ON "pet_adopts"."pet_id" = "pets"."id" INNER JOIN "adopts" ON "adopts"."id" = "pet_adopts"."adopt_id"[0m
+  Rendered favorites/index.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 63ms (Views: 40.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/pets/1" for ::1 at 2019-12-11 14:37:31 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Pet with 'id'=1):
+  
+app/controllers/pets_controller.rb:13:in `show'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (204.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_development"[0m
+  [1m[35m (217.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_test"[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5022504912090105405)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShelter (20191119023206)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" character varying)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119023206"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePet (20191119225757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" character varying, "approximate_age" integer, "sex" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119225757"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddShelterIdToPets (20191119230522)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "pets" ADD "shelter_id" bigint[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "pets" ADD CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119230522"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageFieldToPets (20191120225759)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "image" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191120225759"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToPets (20191121021930)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pets" ADD "description" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191121021930"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdoptionStatusToPets (20191121022448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "pets" ADD "adoptable" boolean DEFAULT 't'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191121022448"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20191203030253)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "rating" integer, "content" character varying, "opt_picture" character varying)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203030253"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSheltersToReviews (20191203031343)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD "shelter_id" bigint[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_shelter_id" ON "reviews"  ("shelter_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_131565a078"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203031343"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAdopts (20191208205229)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "adopts" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "phone" character varying, "description" character varying)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191208205229"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePetAdopts (20191209223920)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "pet_adopts" ("id" bigserial primary key, "pet_id" bigint, "adopt_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3ee125f098"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+, CONSTRAINT "fk_rails_fe02c08d3a"
+FOREIGN KEY ("adopt_id")
+  REFERENCES "adopts" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pet_adopts_on_pet_id" ON "pet_adopts"  ("pet_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_pet_adopts_on_adopt_id" ON "pet_adopts"  ("adopt_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209223920"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddZipToAdopts (20191209224231)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "adopts" ADD "zip" character varying[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209224231"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-11 21:38:06.881241"], ["updated_at", "2019-12-11 21:38:06.881241"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5022504912090105405)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Denver Dog Shelter"], ["address", "123 Main St"], ["city", "Denver"], ["state", "CO"], ["zip", "80206"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Denver Cat Shelter"], ["address", "123 Meow St"], ["city", "Denver"], ["state", "CO"], ["zip", "80206"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sparky"], ["approximate_age", 7], ["sex", "male"], ["shelter_id", 1], ["image", "https://www.washingtonpost.com/resizer/kPkFQsQjvSIjfXG-mFXDEpxq6-4=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg"], ["description", "Sparky loves to play! His favorite game is No Take, Only Throw."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description", "adoptable") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jerry"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 1], ["image", "http://santansun.com/wp-content/uploads/2018/11/5b7fdeab1900001d035028dc.jpeg"], ["description", "You're looking at your new best friend!"], ["adoptable", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Louise"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 2], ["image", "https://upload.wikimedia.org/wikipedia/commons/b/b5/Airedale_terrier_head%2C_Josselin_01.jpg"], ["description", "Louise loves people, places, and things."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description", "adoptable") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Frank"], ["approximate_age", 1], ["sex", "male"], ["shelter_id", 2], ["image", "https://petlandbradenton.com/wp-content/uploads/2018/02/1045420_800.jpg"], ["description", "Frank the tank - this chonk will be over 200 lbs when he is full grown."], ["adoptable", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "opt_picture", "shelter_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WOW! AWESOME SHELTER!"], ["rating", 5], ["content", "I adopted my friendly pup from here! 10/10 would go back."], ["opt_picture", "https://coxrare.files.wordpress.com/2018/07/human-empathy-dogs.png?w=1200&h=627&crop=1"], ["shelter_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "opt_picture", "shelter_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cleanest shelter I've been to!"], ["rating", 5], ["content", "I adopted my friendly pups from here!"], ["opt_picture", "https://st2.depositphotos.com/4967775/11323/v/950/depositphotos_113235752-stock-illustration-avatar-girls-icon-vector-woman.jpg"], ["shelter_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/pets/1" for ::1 at 2019-12-11 14:38:30 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 201ms (Views: 159.1ms | ActiveRecord: 7.5ms)
+
+
+Started DELETE "/pets/1" for ::1 at 2019-12-11 14:38:34 -0700
+Processing by PetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AqtdqW+XRjjzZHNPe9XusAyXZMqzxmGz433DatMol1JTaB/8N3esu13cwVUImsQdfzOl3x2K7r9O2+wPgr774Q==", "id"=>"1"}
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[31mDELETE FROM "pets" WHERE "pets"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets
+Completed 302 Found in 16ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-11 14:38:34 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "pets"[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (198.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_development"[0m
+  [1m[35m (198.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_test"[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5022504912090105405)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShelter (20191119023206)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" character varying)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119023206"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePet (20191119225757)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "name" character varying, "approximate_age" integer, "sex" character varying)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119225757"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddShelterIdToPets (20191119230522)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "pets" ADD "shelter_id" bigint[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "pets" ADD CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119230522"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddImageFieldToPets (20191120225759)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "image" character varying[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191120225759"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToPets (20191121021930)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "description" character varying[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191121021930"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdoptionStatusToPets (20191121022448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pets" ADD "adoptable" boolean DEFAULT 't'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191121022448"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20191203030253)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "rating" integer, "content" character varying, "opt_picture" character varying)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203030253"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddSheltersToReviews (20191203031343)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "reviews" ADD "shelter_id" bigint[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_shelter_id" ON "reviews"  ("shelter_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_131565a078"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203031343"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAdopts (20191208205229)
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "adopts" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "phone" character varying, "description" character varying)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191208205229"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePetAdopts (20191209223920)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "pet_adopts" ("id" bigserial primary key, "pet_id" bigint, "adopt_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_3ee125f098"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+, CONSTRAINT "fk_rails_fe02c08d3a"
+FOREIGN KEY ("adopt_id")
+  REFERENCES "adopts" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pet_adopts_on_pet_id" ON "pet_adopts"  ("pet_id")[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_pet_adopts_on_adopt_id" ON "pet_adopts"  ("adopt_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209223920"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddZipToAdopts (20191209224231)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "adopts" ADD "zip" character varying[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209224231"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-11 21:39:17.078398"], ["updated_at", "2019-12-11 21:39:17.078398"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5022504912090105405)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Denver Dog Shelter"], ["address", "123 Main St"], ["city", "Denver"], ["state", "CO"], ["zip", "80206"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Denver Cat Shelter"], ["address", "123 Meow St"], ["city", "Denver"], ["state", "CO"], ["zip", "80206"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sparky"], ["approximate_age", 7], ["sex", "male"], ["shelter_id", 1], ["image", "https://www.washingtonpost.com/resizer/kPkFQsQjvSIjfXG-mFXDEpxq6-4=/767x0/smart/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/HB4AT3D3IMI6TMPTWIZ74WAR54.jpg"], ["description", "Sparky loves to play! His favorite game is No Take, Only Throw."]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description", "adoptable") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Jerry"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 1], ["image", "http://santansun.com/wp-content/uploads/2018/11/5b7fdeab1900001d035028dc.jpeg"], ["description", "You're looking at your new best friend!"], ["adoptable", "f"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Louise"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 2], ["image", "https://upload.wikimedia.org/wikipedia/commons/b/b5/Airedale_terrier_head%2C_Josselin_01.jpg"], ["description", "Louise loves people, places, and things."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("name", "approximate_age", "sex", "shelter_id", "image", "description", "adoptable") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Frank"], ["approximate_age", 1], ["sex", "male"], ["shelter_id", 2], ["image", "https://petlandbradenton.com/wp-content/uploads/2018/02/1045420_800.jpg"], ["description", "Frank the tank - this chonk will be over 200 lbs when he is full grown."], ["adoptable", "f"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "opt_picture", "shelter_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WOW! AWESOME SHELTER!"], ["rating", 5], ["content", "I adopted my friendly pup from here! 10/10 would go back."], ["opt_picture", "https://coxrare.files.wordpress.com/2018/07/human-empathy-dogs.png?w=1200&h=627&crop=1"], ["shelter_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "rating", "content", "opt_picture", "shelter_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cleanest shelter I've been to!"], ["rating", 5], ["content", "I adopted my friendly pups from here!"], ["opt_picture", "https://st2.depositphotos.com/4967775/11323/v/950/depositphotos_113235752-stock-illustration-avatar-girls-icon-vector-woman.jpg"], ["shelter_id", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m

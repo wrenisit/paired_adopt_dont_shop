@@ -18,4 +18,12 @@ class Shelter < ApplicationRecord
     end
     counts
   end
+
+  # def check_pending(shelters)
+  #   hash = Hash.new(0)
+  #   shelters.each do |shelter|
+  #     hash[shelter.id] = any_pending?
+  #   end
+  #   hash
+  # end
 end

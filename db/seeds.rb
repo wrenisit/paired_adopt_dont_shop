@@ -29,7 +29,7 @@ dog_2 = shelter_1.pets.create( image: "http://santansun.com/wp-content/uploads/2
                   approximate_age: 2,
                   description: "You're looking at your new best friend!",
                   sex: "male",
-                  adoptable: false)
+                  adoptable: true)
 
 dog_3 = shelter_2.pets.create( image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Airedale_terrier_head%2C_Josselin_01.jpg",
                     name: "Louise",
@@ -43,7 +43,7 @@ dog_4 = shelter_2.pets.create( image: "https://petlandbradenton.com/wp-content/u
                     approximate_age: 1,
                     description: "Frank the tank - this chonk will be over 200 lbs when he is full grown.",
                     sex: "male",
-                    adoptable: false)
+                    adoptable: true)
 
 shelter_review_1 = shelter_1.reviews.create(
                     title: "WOW! AWESOME SHELTER!",

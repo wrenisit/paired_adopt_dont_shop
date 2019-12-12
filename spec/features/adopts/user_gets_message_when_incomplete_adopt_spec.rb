@@ -24,12 +24,12 @@ RSpec.describe "incomplete apply to adopt" do
       description: "woof!")
 
   visit "/pets/#{pet_1.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
   visit "/pets/#{pet_2.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
 
   visit "/favorites"
-  click_button "Apply to Adopt"
+  click_on "Apply to Adopt"
   expect(current_path).to eq("/adopts/new")
   expect(page).to have_link("Sparky")
   page.check "#{pet_1.id}"
@@ -40,7 +40,7 @@ RSpec.describe "incomplete apply to adopt" do
   fill_in :state, with: "Florida"
   fill_in :zip, with: "98789"
   fill_in :phone, with: "555-867-5309"
-  click_button "Submit"
+  click_on "Submit"
 
   expect(current_path).to eq("/adopts/new")
   expect(page).to have_content("Incomplete Application")
@@ -52,7 +52,7 @@ RSpec.describe "incomplete apply to adopt" do
   fill_in :zip, with: "98789"
   fill_in :phone, with: "555-867-5309"
   fill_in :description, with: "I have a dog ranch, and I'd love to adopt!"
-  click_button "Submit"
+  click_on "Submit"
 
   expect(current_path).to eq("/favorites")
   expect(page).to have_content("Application Submitted")

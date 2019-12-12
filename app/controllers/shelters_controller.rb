@@ -21,6 +21,7 @@ class SheltersController < ApplicationController
     @shelter = Shelter.find(params[:id])
     @reviews = @shelter.reviews
     @count_of_adoptions = @shelter.find_adoptions
+    @count = @shelter.any_pending?
   end
 
   def edit

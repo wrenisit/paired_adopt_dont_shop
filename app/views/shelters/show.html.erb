@@ -22,7 +22,11 @@
   <li><p><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></p></li>
   <li><p><%= link_to "View #{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></p></li>
 </ul>
-
+<h4><%= link_to "Edit #{@shelter.name}", "/shelters/#{@shelter.id}/edit" %></h4></br>
+<% if @count == 0 %>
+  <h4><%= link_to "Delete #{@shelter.name}", "/shelters/#{@shelter.id}", method: :delete %></h4></br>
+<% end %>
+<h4><%= link_to "View #{@shelter.name} pets", "/shelters/#{@shelter.id}/pets" %></h4></br>
 </section>
 
 <h2><%= @shelter.name%> Reviews </h2>

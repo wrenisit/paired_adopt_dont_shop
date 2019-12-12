@@ -8,4 +8,14 @@ class Shelter < ApplicationRecord
    x = pets.joins(:adopts)
    x.count
   end
+
+  def any_pending?
+    counts = 0
+    pets.each do |pet|
+      if pet.adoptable == false
+        counts += 1
+      end
+    end
+    counts
+  end
 end

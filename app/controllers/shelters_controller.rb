@@ -2,6 +2,10 @@ class SheltersController < ApplicationController
 
   def index
     @shelters = Shelter.all
+    @pets_pending = Hash.new(0)
+    @shelters.each do |shelter|
+      @pets_pending[shelter.id] = shelter.any_pending?
+    end
   end
 
   def new

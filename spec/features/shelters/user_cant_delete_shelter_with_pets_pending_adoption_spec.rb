@@ -31,7 +31,7 @@ RSpec.describe "User cant delete pets pending adoption or their shelters", type:
     visit "/shelters/#{@shelter_1.id}"
       expect(page).to have_link("Delete #{@shelter_1.name}")
 
-      click_on("Delete #{@shelter_1.name}")
+      click_link("Delete #{@shelter_1.name}")
       expect(page).to have_current_path("/shelters")
     visit "/shelters/#{@shelter_2.id}"
       expect(page).to_not have_link("Delete #{@shelter_2.name}")

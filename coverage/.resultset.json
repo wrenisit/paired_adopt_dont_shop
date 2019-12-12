@@ -409,7 +409,6 @@
         1,
         1,
         1,
-        1,
         null,
         null
       ],
@@ -933,7 +932,7 @@
         1,
         null,
         1,
-        null,
+        1,
         null,
         null
       ],
@@ -1753,13 +1752,21 @@
         null,
         null,
         1,
-        18,
-        18,
-        6,
-        1,
+        68,
+        68,
+        78,
+        37,
         null,
         null,
-        18,
+        68,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -1786,8 +1793,12 @@
         1,
         1,
         1,
-        null,
         1,
+        1,
+        null,
+        0,
+        0,
+        null,
         null,
         null,
         1,
@@ -1876,6 +1887,7 @@
         3,
         null,
         null,
+        null,
         1,
         null,
         1,
@@ -1936,7 +1948,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "/Users/wren/turing/2projects/paired_adopt_dont_shop/app/controllers/shelters_controller.rb": [
@@ -1944,6 +1955,10 @@
         null,
         1,
         7,
+        7,
+        7,
+        50,
+        null,
         null,
         null,
         1,
@@ -2031,6 +2046,6 @@
         null
       ]
     },
-    "timestamp": 1576109916
+    "timestamp": 1576131509
   }
 }

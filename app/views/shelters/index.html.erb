@@ -5,7 +5,9 @@
 <section id="shelter-<%= shelter.id %>">
   <h3><a href="/shelters/<%= shelter.id %>"><%= shelter.name %></a></h3>
   <h4><%= link_to "Edit #{shelter.name}", "/shelters/#{shelter.id}/edit" %></h4><br>
+  <% if @pets_pending[shelter.id] == 0 %>
   <h4><%= link_to "Delete #{shelter.name}", "/shelters/#{shelter.id}", method: :delete %></h4><br>
+  <% end %>
 </section>
 <% end %>
 <h2><a href="/shelters/new">Create New Shelter</a></h2>

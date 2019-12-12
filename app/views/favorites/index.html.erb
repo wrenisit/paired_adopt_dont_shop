@@ -13,7 +13,9 @@
   <% else %>
   <p><%= "Go Look For Your Fur-ever Friends On Our Site" %></p>
 <% end %>
-<h3><%= button_to "Remove All Favorited Pets", "/favorites", method: :delete %></h3>
+<% if @favs.pets.count > 0 %>
+  <h3><%= button_to "Remove All Favorited Pets", "/favorites", method: :delete %></h3>
+<%  end %>
 <h3><%= button_to "Apply to Adopt", "/adopts/new", method: :get %></h3>
 </section>
 

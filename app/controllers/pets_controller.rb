@@ -21,7 +21,7 @@ class PetsController < ApplicationController
     @shelter = Shelter.find(params[:shelter_id])
     pet = @shelter.pets.create(pet_params)
     if pet.save
-      redirect_to "/shelters/#{shelter.id}/pets"
+      redirect_to "/shelters/#{@shelter.id}/pets"
     else
       flash[:notice] = "Cannot create pet. Missing required information."
       render :new

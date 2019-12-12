@@ -44,6 +44,6 @@ RSpec.describe "User sees a message when no favorited pets" do
     expect(page).to_not have_content("#{pet_2.image}")
 
     expect(page).to have_content("Go Look For Your Fur-ever Friends On Our Site")
-
+    expect(page).to_not have_button("Remove All Favorited Pets")
   end
 end

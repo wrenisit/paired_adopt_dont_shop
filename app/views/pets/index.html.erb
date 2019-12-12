@@ -1,6 +1,5 @@
 
 <% @pets %>
-<h4>There are <%= @pets.count %> pets at this shelter </h4>
 <h1>Pets</h1>
 <% @pets.each do |pet| %>
 <h3>Name: &nbsp<%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>

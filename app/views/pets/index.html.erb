@@ -1,7 +1,6 @@
 
-<% @pets %>
-<h4>There are <%= @pets.count %> pets at this shelter </h4>
 <h1>Pets</h1>
+<section class="grid">
 <% @pets.each do |pet| %>
 <h3>Name: &nbsp<%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>
   <img src=<%= pet.image %>>
@@ -15,14 +14,11 @@
       Pending Adoption
     <% end %></p></li>
   <li><p1>Current shelter: &nbsp </p1><p><%= link_to "#{pet.shelter&.name}", "/shelters/#{pet.shelter_id}" %></p></li>
+  <li><p><%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %></p></li>
+  <li><p><%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %></p></li>
 </ul>
-  <%= link_to "Edit #{pet.name}", "/pets/#{pet.id}/edit" %>
-  <%= link_to "Delete #{pet.name}", "/pets/#{pet.id}", method: :delete %>
-  </br>
-  </br>
-  </br>
 <% end %>
-
+</section>
 <% if @shelter %>
   <h3><%= link_to 'Add New Adoptable Pet', "/shelters/#{@shelter.id}/pets/new" %></h3>
 <% end %>

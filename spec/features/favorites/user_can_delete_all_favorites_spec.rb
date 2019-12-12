@@ -24,12 +24,12 @@ RSpec.describe "User can delete favorited pets" do
       description: "woof!")
 
     visit "/pets/#{pet_1.id}"
-    click_button "Favorite this pet"
+    click_on "Favorite this pet"
     visit "/pets/#{pet_2.id}"
-    click_button "Favorite this pet"
+    click_on "Favorite this pet"
 
     visit "/favorites"
-    click_button "Remove All Favorited Pets"
+    click_on "Remove All Favorited Pets"
 
     expect(current_path).to eq('/favorites')
     expect(page).to_not have_content(pet_1.name)

@@ -28,8 +28,10 @@ class AdoptsController < ApplicationController
 
   def show
     @adopt = Adopt.find(params[:id])
+    @name = @adopt.name
     adopt_pets = PetAdopt.where(adopt_id: @adopt.id).pluck(:pet_id)
     @pets = Pet.where(id: adopt_pets)
+    # require "pry"; binding.pry
   end
 
   private

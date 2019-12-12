@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "User can delete an existing pet", type: :feature do
-  before(:each) do
+RSpec.describe "User cant delete pets pending adoption or their shelters", type: :feature do
+  it "can delete a shelter" do
     @shelter_1 = Shelter.create( name: "Denver Dog Shelter",
                                 address: "123 Main St",
                                 city:    "Denver",
@@ -27,18 +27,13 @@ RSpec.describe "User can delete an existing pet", type: :feature do
                       description: "Sparky loves to play! His favorite game is No Take, Only Throw.",
                       sex: "male",
                       adoptable: false)
-  end
 
-  it "can delete a shelter" do
     visit "/shelters/#{@shelter_1.id}"
       expect(page).to have_link("Delete #{@shelter_1.name}")
 
       click_on("Delete #{@shelter_1.name}")
       expect(page).to have_current_path("/shelters")
-
     visit "/shelters/#{@shelter_2.id}"
-
       expect(page).to_not have_link("Delete #{@shelter_2.name}")
-
   end
 end

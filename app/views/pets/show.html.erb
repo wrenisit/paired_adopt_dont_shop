@@ -1,24 +1,34 @@
-<h2> <%= @pet.name %></h2>
 
-<img src= <%= @pet.image %>><br>
-<ul>
-<li><p1>Description: &nbsp </p1><p> <%= @pet.description %></p></li>
-<li><p1>Age:&nbsp</p1><p> <%= @pet.approximate_age %></p></li>
-<li><p1>Sex: &nbsp </p1><p> <%= @pet.sex %></p></li>
-<li><p1> Adoption Status: &nbsp </p1><p><% if @pet.adoptable %>
-      Adoptable
-    <% else %>
-      Pending Adoption
+<h2> <%= @pet.name %></h2>
+<section class="grid">
+  <section class="img">
+    <img src= <%= @pet.image %>><br>
+  </section>
+
+  <ul>
+    <h5>Pet info</h5>
+    <li><p1>Description: &nbsp </p1><p> <%= @pet.description %></p></li>
+    <li><p1>Age:&nbsp</p1><p> <%= @pet.approximate_age %></p></li>
+    <li><p1>Sex: &nbsp </p1><p> <%= @pet.sex %></p></li>
+    <li><p1> Adoption Status: &nbsp </p1><p><% if @pet.adoptable %>
+          Adoptable
+        <% else %>
+          Pending Adoption
+        <% end %></p></li>
+    <li><p1>Current shelter:&nbsp</p1><p> <%= link_to "#{@pet.shelter&.name}", "/shelters/#{@pet.shelter_id}" %></p></li>
+  </ul>
+
+  <ul>
+    <h5>Modify pet</h5>
+    <li><p><%= link_to "Edit #{@pet.name}", "/pets/#{@pet.id}/edit" %></p></li>
+    <li><p><% if @pet.adoptable %>
+      <%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
     <% end %></p></li>
-<li><p1>Current shelter:&nbsp</p1><p> <%= link_to "#{@pet.shelter&.name}", "/shelters/#{@pet.shelter_id}" %></p></li>
-</ul>
-<%= link_to "Edit #{@pet.name}", "/pets/#{@pet.id}/edit" %></br>
-<% if @pet.adoptable %>
-  <%= link_to "Delete #{@pet.name}", "/pets/#{@pet.id}", method: :delete %>
-<% end %>
-<% if @favs.pets.keys.include?("#{@pet.id}") %>
-  <%= button_to "Remove From Favorites", "/favorites/#{@pet.id}", method: :delete %>
-<% else %>
-  <%= button_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
-<% end %>
-<%= button_to "View Applications To Adopt #{@pet.name}", "/adopts/index/#{@pet.id}", method: :get %>
+    <li><p><% if @favs.pets.keys.include?("#{@pet.id}") %>
+      <%= link_to "Remove From Favorites", "/favorites/#{@pet.id}", method: :delete %>
+    <% else %>
+      <%= link_to "Favorite this pet", "/pets/#{@pet.id}/favorite", method: :post %>
+    <% end %></p></li>
+    <li><p><%= link_to "View Applications To Adopt #{@pet.name}", "/adopts/index/#{@pet.id}", method: :get %></p></li>
+  </ul>
+</section>

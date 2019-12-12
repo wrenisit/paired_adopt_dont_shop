@@ -24,9 +24,9 @@ RSpec.describe "User can delete favorited pets" do
       description: "woof!")
 
   visit "/pets/#{pet_1.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
   visit "/pets/#{pet_2.id}"
-  click_button "Favorite this pet"
+  click_on "Favorite this pet"
 
   visit "/pets/#{pet_1.id}"
   expect(page).to have_content("Favorite Pets: 2")

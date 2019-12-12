@@ -13,10 +13,10 @@
   <section id="applied_for_adoptions">
     <% @pets.each do |pet| %>
       <h2><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
-      <% if pet.adoptable? %>
+      <% if pet.adoptable == true %>
         <h4><%= link_to "Approve #{pet.name} adoption", "/pets/#{pet.id}/pet_adopts", method: :patch %> </h4>
       <% else %>
-        <h4><% link_to "Revoke #{pet.name} adoption", "/adopts/#{@adopt.id}" %></h4>
+        <h4><%= link_to "Revoke #{pet.name} adoption", "/pets/#{pet.id}/pet_adopts", method: :patch %></h4>
       <% end %>
     <% end %>
     <h4>On hold for <%= @adopt.name %></h4>

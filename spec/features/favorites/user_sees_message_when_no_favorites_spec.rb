@@ -29,12 +29,12 @@ RSpec.describe "User sees a message when no favorited pets" do
 
 
     visit "/pets/#{pet_1.id}"
-    click_button "Favorite this pet"
+    click_on "Favorite this pet"
     visit "/pets/#{pet_2.id}"
-    click_button "Favorite this pet"
+    click_on "Favorite this pet"
 
     visit "/favorites"
-    click_button "Remove All Favorited Pets"
+    click_on "Remove All Favorited Pets"
 
     expect(current_path).to eq('/favorites')
 
